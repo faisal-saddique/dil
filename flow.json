@@ -876,13 +876,13 @@
         "type": "ui_time_scheduler",
         "z": "e1959e444de2b12a",
         "group": "a5064f7f4fee4cd2",
-        "name": "",
+        "name": "On/Off Scheduler",
         "startDay": 0,
         "refresh": 60,
         "devices": [
             "Smart Plug"
         ],
-        "singleOff": false,
+        "singleOff": true,
         "onlySendChange": false,
         "customPayload": false,
         "eventMode": true,
@@ -896,7 +896,7 @@
                 "event": "false"
             }
         ],
-        "sendTopic": false,
+        "sendTopic": true,
         "lat": "",
         "lon": "",
         "customContextStore": "",
@@ -904,8 +904,8 @@
         "order": 1,
         "width": 0,
         "height": 0,
-        "x": 950,
-        "y": 320,
+        "x": 910,
+        "y": 300,
         "wires": [
             [
                 "df006209b4ad5501"
@@ -925,8 +925,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1140,
-        "y": 280,
+        "x": 1120,
+        "y": 300,
         "wires": []
     },
     {
