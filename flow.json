@@ -676,7 +676,7 @@
         "type": "function",
         "z": "e1959e444de2b12a",
         "name": "Check if the Power is below the threshold",
-        "func": "// Assuming the threshold is defined as a constant (you can adjust it)\nconst threshold = global.get(\"powerThresholdValue\");\n\nnode.warn(\"inside the logic function\");\n\n// Assuming the power value is in msg.payload\nconst powerValue = msg.payload;\n\nnode.warn(`powerValue = ${powerValue} || threshold = ${threshold}`)\n// Check if the power value is below the threshold\nif (powerValue < threshold) {\n    node.warn(\"Yes below the threshold\");\n    // Power is below the threshold, no action needed\n    return null, null;\n} else {\n    // Power is above or equal to the threshold, output a message in msg.payload\n    msg.payload = \"Power is above the defined threshold. Switch turned OFF.\";\n    return 0, msg;\n}",
+        "func": "// Assuming the threshold is defined as a constant (you can adjust it)\nconst threshold = global.get(\"powerThresholdValue\");\n\nnode.warn(\"inside the logic function\");\n\n// Assuming the power value is in msg.payload\nconst powerValue = msg.payload;\n\nnode.warn(`powerValue = ${powerValue} || threshold = ${threshold}`)\n// Check if the power value is below the threshold\nif (powerValue < threshold) {\n    node.warn(\"Yes below the threshold\");\n    // Power is below the threshold, no action needed\n    return null, null;\n} else {\n    node.warn(\"ABOVE THRESHOLD\");\n    // Power is above or equal to the threshold, output a message in msg.payload\n    msg.payload = \"Power is above the defined threshold. Switch turned OFF.\";\n    return 0, msg;\n}",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
