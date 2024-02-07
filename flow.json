@@ -1000,8 +1000,8 @@
         "y": 400,
         "wires": [
             [
-                "f484f28c5c98758f",
-                "de26a49543ccab33"
+                "de26a49543ccab33",
+                "fc0770c0e77010de"
             ]
         ]
     },
@@ -1035,22 +1035,6 @@
         ]
     },
     {
-        "id": "f484f28c5c98758f",
-        "type": "json",
-        "z": "e1959e444de2b12a",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 1090,
-        "y": 480,
-        "wires": [
-            [
-                "fc0770c0e77010de"
-            ]
-        ]
-    },
-    {
         "id": "fc0770c0e77010de",
         "type": "debug",
         "z": "e1959e444de2b12a",
@@ -1062,8 +1046,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1220,
-        "y": 520,
+        "x": 1100,
+        "y": 440,
         "wires": []
     },
     {
