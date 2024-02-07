@@ -304,6 +304,17 @@
         "height": 1
     },
     {
+        "id": "a5064f7f4fee4cd2",
+        "type": "ui_group",
+        "name": "Schedule ON/OFF",
+        "tab": "2a11c41f676a1a39",
+        "order": 6,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
         "id": "c800ba91069ec14d",
         "type": "ui_switch",
         "z": "e1959e444de2b12a",
