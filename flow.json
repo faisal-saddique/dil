@@ -314,14 +314,15 @@
         "height": 1
     },
     {
-        "id": "e8f107b153f685ec",
-        "type": "ui_spacer",
-        "z": "e1959e444de2b12a",
-        "name": "spacer",
-        "group": "a5064f7f4fee4cd2",
-        "order": 2,
-        "width": 1,
-        "height": 1
+        "id": "b799eddd1eabb474",
+        "type": "ui_group",
+        "name": "Smart Plug Switch",
+        "tab": "2a11c41f676a1a39",
+        "order": 6,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
     },
     {
         "id": "c800ba91069ec14d",
@@ -331,7 +332,7 @@
         "name": "Smart Plug Switch",
         "label": "Smart Plug Switch",
         "tooltip": "Turn the Smart Plug ON/OFF.",
-        "group": "a5064f7f4fee4cd2",
+        "group": "b799eddd1eabb474",
         "order": 1,
         "width": 0,
         "height": 0,
@@ -910,7 +911,7 @@
         "lon": "",
         "customContextStore": "",
         "outputs": 2,
-        "order": 3,
+        "order": 2,
         "width": "6",
         "height": "3",
         "x": 1130,
