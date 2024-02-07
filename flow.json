@@ -487,7 +487,7 @@
         "topic": "",
         "name": "",
         "x": 1710,
-        "y": 600,
+        "y": 560,
         "wires": [
             []
         ]
@@ -677,7 +677,7 @@
         "type": "function",
         "z": "e1959e444de2b12a",
         "name": "Check if the Power is below the threshold",
-        "func": "// Assuming the threshold is defined as a constant (you can adjust it)\nconst threshold = global.get(\"powerThresholdValue\");\n\nnode.warn(\"inside the logic function\");\n\n// Assuming the power value is in msg.payload\nconst powerValue = msg.payload;\n\n// Check if the power value is below the threshold\nif (powerValue < threshold) {\n    // Power is below the threshold, no action needed\n    return [null, null];\n} else {\n    var msg2 = {payload: 0};\n    // Power is above or equal to the threshold, output a message in msg.payload\n    msg.payload = \"Power is above the defined threshold. Switch turned OFF.\";\n    if (global.get(\"switchStatus\") || true) return [msg2, msg];\n}",
+        "func": "// Assuming the threshold is defined as a constant (you can adjust it)\nconst threshold = global.get(\"powerThresholdValue\");\n\nnode.warn(\"inside the logic function\");\n\n// Assuming the power value is in msg.payload\nconst powerValue = msg.payload;\n\n// Check if the power value is below the threshold\nif (powerValue < threshold) {\n    // Power is below the threshold, no action needed\n    return [null, null];\n} else {\n    var msg2 = {payload: 0};\n    // Power is above or equal to the threshold, output a message in msg.payload\n    msg.payload = \"Power is above the defined threshold. Switch turned OFF.\";\n    if (global.get(\"switchStatus\")) return [msg2, msg];\n    else return [null, null];\n}",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -690,8 +690,7 @@
                 "c800ba91069ec14d"
             ],
             [
-                "38dadf5b727aa0c2",
-                "30d98fad6e652214"
+                "38dadf5b727aa0c2"
             ]
         ]
     },
@@ -846,29 +845,13 @@
         "topic": "",
         "payload": "ABOVE THRESHOLD. PLUG TURNED OFF.",
         "payloadType": "str",
-        "x": 1490,
-        "y": 620,
+        "x": 1510,
+        "y": 600,
         "wires": [
             [
                 "38dadf5b727aa0c2"
             ]
         ]
-    },
-    {
-        "id": "30d98fad6e652214",
-        "type": "debug",
-        "z": "e1959e444de2b12a",
-        "name": "debug 7",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1700,
-        "y": 560,
-        "wires": []
     },
     {
         "id": "ed0de2cdbbb77317",
