@@ -24,7 +24,7 @@
             "c800ba91069ec14d",
             "ec2d79f4426dc50d"
         ],
-        "x": 1514,
+        "x": 1614,
         "y": 419,
         "w": 452,
         "h": 82
@@ -43,8 +43,8 @@
             "254bac1924a5dc78",
             "9d30a68b4accdb31"
         ],
-        "x": 154,
-        "y": 159,
+        "x": 974,
+        "y": 619,
         "w": 372,
         "h": 122
     },
@@ -315,7 +315,7 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 1630,
+        "x": 1730,
         "y": 460,
         "wires": [
             [
@@ -362,8 +362,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 450,
-        "y": 240,
+        "x": 1270,
+        "y": 700,
         "wires": [
             []
         ]
@@ -393,8 +393,8 @@
         "seg2": "850",
         "diff": false,
         "className": "",
-        "x": 450,
-        "y": 200,
+        "x": 1270,
+        "y": 660,
         "wires": []
     },
     {
@@ -403,12 +403,12 @@
         "z": "e1959e444de2b12a",
         "name": "",
         "label": "Warning Level",
-        "tooltip": "",
+        "tooltip": "Set the Power threshold here.",
         "group": "4ff12dc7894c7df2",
         "order": 1,
         "width": 0,
         "height": 0,
-        "wrap": false,
+        "wrap": true,
         "passthru": true,
         "topic": "Warning",
         "topicType": "str",
@@ -417,36 +417,13 @@
         "max": "999",
         "step": 1,
         "className": " ",
-        "x": 760,
-        "y": 180,
+        "x": 1500,
+        "y": 700,
         "wires": [
-            []
-        ]
-    },
-    {
-        "id": "0c565a4cdc6ea824",
-        "type": "ui_numeric",
-        "z": "e1959e444de2b12a",
-        "name": "",
-        "label": "Cutoff Level",
-        "tooltip": "",
-        "group": "4ff12dc7894c7df2",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "wrap": false,
-        "passthru": true,
-        "topic": "topic",
-        "topicType": "msg",
-        "format": "{{value}}",
-        "min": 0,
-        "max": 10,
-        "step": 1,
-        "className": "",
-        "x": 730,
-        "y": 340,
-        "wires": [
-            []
+            [
+                "e9c10a5d2742f68b",
+                "baa9da29506a3672"
+            ]
         ]
     },
     {
@@ -464,7 +441,7 @@
         "correl": "",
         "expiry": "",
         "broker": "27c07a765d141ace",
-        "x": 1850,
+        "x": 1950,
         "y": 460,
         "wires": []
     },
@@ -482,12 +459,13 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 230,
-        "y": 220,
+        "x": 1050,
+        "y": 680,
         "wires": [
             [
                 "254bac1924a5dc78",
-                "f302c672f2ebecc5"
+                "f302c672f2ebecc5",
+                "92ecbd5f190479ca"
             ]
         ]
     },
@@ -506,8 +484,8 @@
         "className": "",
         "topic": "",
         "name": "",
-        "x": 1230,
-        "y": 80,
+        "x": 1670,
+        "y": 600,
         "wires": [
             []
         ]
@@ -677,14 +655,14 @@
         "id": "86d4b49ade172fdb",
         "type": "function",
         "z": "e1959e444de2b12a",
-        "name": "function 1",
+        "name": "Convert Bool to 1 and 0",
         "func": "if (msg.payload) msg.payload = 1;\nelse msg.payload = 0;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1400,
+        "x": 1450,
         "y": 460,
         "wires": [
             [
@@ -693,32 +671,66 @@
         ]
     },
     {
-        "id": "75445a5b45e6ee10",
-        "type": "inject",
+        "id": "92ecbd5f190479ca",
+        "type": "function",
         "z": "e1959e444de2b12a",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 1040,
-        "y": 80,
+        "name": "Check if the Power is below the threshold",
+        "func": "// Assuming the threshold is defined as a constant (you can adjust it)\nconst threshold = global.get(\"powerThresholdValue\");\n\n// Assuming the power value is in msg.payload\nconst powerValue = msg.payload;\n\n// Check if the power value is below the threshold\nif (powerValue < threshold) {\n    // Power is below the threshold, no action needed\n    return null, null;\n} else {\n    // Power is above or equal to the threshold, output a message in msg.payload\n    msg.payload = \"Power is above the defined threshold. Switch turned OFF.\";\n    return 0, msg;\n}\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1400,
+        "y": 560,
         "wires": [
+            [
+                "c800ba91069ec14d"
+            ],
             [
                 "38dadf5b727aa0c2"
             ]
         ]
+    },
+    {
+        "id": "e9c10a5d2742f68b",
+        "type": "change",
+        "z": "e1959e444de2b12a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "powerThresholdValue",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1750,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "baa9da29506a3672",
+        "type": "debug",
+        "z": "e1959e444de2b12a",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1680,
+        "y": 740,
+        "wires": []
     }
 ]
