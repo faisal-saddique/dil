@@ -928,5 +928,30 @@
         "x": 1140,
         "y": 280,
         "wires": []
+    },
+    {
+        "id": "1f21c77ce1d06231",
+        "type": "inject",
+        "z": "e1959e444de2b12a",
+        "name": "",
+        "props": [
+            {
+                "p": "getStatus",
+                "v": "true",
+                "vt": "bool"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 730,
+        "y": 300,
+        "wires": [
+            [
+                "de26a49543ccab33"
+            ]
+        ]
     }
 ]
