@@ -842,9 +842,9 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 1480,
+        "payload": "ABOVE THRESHOLD. PLUG TURNED OFF.",
+        "payloadType": "str",
+        "x": 1470,
         "y": 620,
         "wires": [
             [
