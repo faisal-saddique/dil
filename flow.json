@@ -485,7 +485,7 @@
         "className": "",
         "topic": "",
         "name": "",
-        "x": 1670,
+        "x": 1690,
         "y": 600,
         "wires": [
             []
@@ -865,7 +865,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1660,
+        "x": 1700,
         "y": 560,
         "wires": []
     }
