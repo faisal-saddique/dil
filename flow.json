@@ -689,7 +689,8 @@
                 "c800ba91069ec14d"
             ],
             [
-                "38dadf5b727aa0c2"
+                "38dadf5b727aa0c2",
+                "30d98fad6e652214"
             ]
         ]
     },
@@ -851,5 +852,21 @@
                 "38dadf5b727aa0c2"
             ]
         ]
+    },
+    {
+        "id": "30d98fad6e652214",
+        "type": "debug",
+        "z": "e1959e444de2b12a",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1660,
+        "y": 560,
+        "wires": []
     }
 ]
