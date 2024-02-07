@@ -329,9 +329,9 @@
         "type": "ui_switch",
         "z": "e1959e444de2b12a",
         "g": "dbb1aa202dbe8cf8",
-        "name": "",
-        "label": "switch",
-        "tooltip": "",
+        "name": "Smart Plug Switch",
+        "label": "Smart Plug Switch",
+        "tooltip": "Turn the Smart Plug ON/OFF.",
         "group": "a5064f7f4fee4cd2",
         "order": 1,
         "width": 0,
@@ -351,7 +351,7 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 1590,
+        "x": 1630,
         "y": 460,
         "wires": [
             [
