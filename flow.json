@@ -914,11 +914,12 @@
         "order": 1,
         "width": 0,
         "height": 0,
-        "x": 910,
-        "y": 300,
+        "x": 950,
+        "y": 280,
         "wires": [
             [
-                "df006209b4ad5501"
+                "df006209b4ad5501",
+                "5b3239a98d190a48"
             ],
             []
         ]
@@ -935,8 +936,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1120,
-        "y": 300,
+        "x": 1160,
+        "y": 260,
         "wires": []
     },
     {
@@ -957,11 +958,91 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 730,
-        "y": 300,
+        "y": 280,
         "wires": [
             [
                 "de26a49543ccab33"
             ]
+        ]
+    },
+    {
+        "id": "5b3239a98d190a48",
+        "type": "file",
+        "z": "e1959e444de2b12a",
+        "name": "",
+        "filename": "./schedules/schedule_on_off.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1190,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d08e8872dfadc391",
+        "type": "file in",
+        "z": "e1959e444de2b12a",
+        "name": "",
+        "filename": "./schedules/schedule_on_off.txt",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 850,
+        "y": 400,
+        "wires": [
+            [
+                "f484f28c5c98758f"
+            ]
+        ]
+    },
+    {
+        "id": "45d038a265d38ca6",
+        "type": "inject",
+        "z": "e1959e444de2b12a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 850,
+        "y": 540,
+        "wires": [
+            [
+                "d08e8872dfadc391"
+            ]
+        ]
+    },
+    {
+        "id": "f484f28c5c98758f",
+        "type": "json",
+        "z": "e1959e444de2b12a",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 1110,
+        "y": 480,
+        "wires": [
+            []
         ]
     }
 ]
