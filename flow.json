@@ -880,13 +880,22 @@
         "startDay": 0,
         "refresh": 60,
         "devices": [
-            "Device 1"
+            "Smart Plug"
         ],
         "singleOff": false,
         "onlySendChange": false,
         "customPayload": false,
-        "eventMode": false,
-        "eventOptions": [],
+        "eventMode": true,
+        "eventOptions": [
+            {
+                "label": "On",
+                "event": "true"
+            },
+            {
+                "label": "Off",
+                "event": "false"
+            }
+        ],
         "sendTopic": false,
         "lat": "",
         "lon": "",
@@ -895,11 +904,29 @@
         "order": 1,
         "width": 0,
         "height": 0,
-        "x": 1090,
-        "y": 220,
+        "x": 950,
+        "y": 320,
         "wires": [
-            [],
+            [
+                "df006209b4ad5501"
+            ],
             []
         ]
+    },
+    {
+        "id": "df006209b4ad5501",
+        "type": "debug",
+        "z": "e1959e444de2b12a",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1140,
+        "y": 280,
+        "wires": []
     }
 ]
