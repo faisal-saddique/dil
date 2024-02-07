@@ -55,7 +55,7 @@
             "c800ba91069ec14d",
             "ec2d79f4426dc50d"
         ],
-        "x": 1334,
+        "x": 1514,
         "y": 419,
         "w": 392,
         "h": 82
@@ -351,7 +351,7 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 1410,
+        "x": 1590,
         "y": 460,
         "wires": [
             [
@@ -800,7 +800,7 @@
         "correl": "",
         "expiry": "",
         "broker": "27c07a765d141ace",
-        "x": 1610,
+        "x": 1790,
         "y": 460,
         "wires": []
     },
@@ -894,18 +894,9 @@
         ],
         "singleOff": true,
         "onlySendChange": false,
-        "customPayload": false,
+        "customPayload": true,
         "eventMode": true,
-        "eventOptions": [
-            {
-                "label": "On",
-                "event": "true"
-            },
-            {
-                "label": "Off",
-                "event": "false"
-            }
-        ],
+        "eventOptions": [],
         "sendTopic": true,
         "lat": "",
         "lon": "",
@@ -923,7 +914,7 @@
             ],
             [
                 "3786f7057f0b4039",
-                "c800ba91069ec14d"
+                "86d4b49ade172fdb"
             ]
         ]
     },
@@ -1041,5 +1032,24 @@
         "x": 1400,
         "y": 380,
         "wires": []
+    },
+    {
+        "id": "86d4b49ade172fdb",
+        "type": "function",
+        "z": "e1959e444de2b12a",
+        "name": "function 1",
+        "func": "if (msg.payload) msg.payload = 1;\nelse msg.payload = 0;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1400,
+        "y": 460,
+        "wires": [
+            [
+                "c800ba91069ec14d"
+            ]
+        ]
     }
 ]
