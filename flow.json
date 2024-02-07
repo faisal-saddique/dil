@@ -319,7 +319,8 @@
         "y": 460,
         "wires": [
             [
-                "ec2d79f4426dc50d"
+                "ec2d79f4426dc50d",
+                "ed0de2cdbbb77317"
             ]
         ]
     },
@@ -676,7 +677,7 @@
         "type": "function",
         "z": "e1959e444de2b12a",
         "name": "Check if the Power is below the threshold",
-        "func": "// Assuming the threshold is defined as a constant (you can adjust it)\nconst threshold = global.get(\"powerThresholdValue\");\n\nnode.warn(\"inside the logic function\");\n\n// Assuming the power value is in msg.payload\nconst powerValue = msg.payload;\n\n// Check if the power value is below the threshold\nif (powerValue < threshold) {\n    node.warn(\"Yes below the threshold\");\n    // Power is below the threshold, no action needed\n    return [null, null];\n} else {\n    node.warn(\"ABOVE THRESHOLD\");\n    var msg2 = {payload: 0};\n    // Power is above or equal to the threshold, output a message in msg.payload\n    msg.payload = \"Power is above the defined threshold. Switch turned OFF.\";\n    return [msg2, msg];\n}",
+        "func": "// Assuming the threshold is defined as a constant (you can adjust it)\nconst threshold = global.get(\"powerThresholdValue\");\n\nnode.warn(\"inside the logic function\");\n\n// Assuming the power value is in msg.payload\nconst powerValue = msg.payload;\n\n// Check if the power value is below the threshold\nif (powerValue < threshold) {\n    // Power is below the threshold, no action needed\n    return [null, null];\n} else {\n    var msg2 = {payload: 0};\n    // Power is above or equal to the threshold, output a message in msg.payload\n    msg.payload = \"Power is above the defined threshold. Switch turned OFF.\";\n    if (global.get(\"switchStatus\") || true) return [msg2, msg];\n}",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -868,5 +869,22 @@
         "x": 1700,
         "y": 560,
         "wires": []
+    },
+    {
+        "id": "ed0de2cdbbb77317",
+        "type": "function",
+        "z": "e1959e444de2b12a",
+        "name": "Set Switch Status",
+        "func": "if (msg.payload==1) global.set(\"switchStatus\",true);\nelse global.set(\"switchStatus\",false);",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1950,
+        "y": 400,
+        "wires": [
+            []
+        ]
     }
 ]
