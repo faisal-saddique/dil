@@ -513,40 +513,6 @@
         ]
     },
     {
-        "id": "f6b748146358ecba",
-        "type": "change",
-        "z": "e1959e444de2b12a",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "Warning !",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "The power drawn exceeds the warning threshold.",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1020,
-        "y": 80,
-        "wires": [
-            [
-                "38dadf5b727aa0c2"
-            ]
-        ]
-    },
-    {
         "id": "de26a49543ccab33",
         "type": "ui_time_scheduler",
         "z": "e1959e444de2b12a",
@@ -723,6 +689,35 @@
         "wires": [
             [
                 "c800ba91069ec14d"
+            ]
+        ]
+    },
+    {
+        "id": "75445a5b45e6ee10",
+        "type": "inject",
+        "z": "e1959e444de2b12a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1040,
+        "y": 80,
+        "wires": [
+            [
+                "38dadf5b727aa0c2"
             ]
         ]
     }
