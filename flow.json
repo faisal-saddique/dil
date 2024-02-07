@@ -275,9 +275,11 @@
         "animate": false,
         "className": "",
         "x": 190,
-        "y": 80,
+        "y": 120,
         "wires": [
-            []
+            [
+                "ec2d79f4426dc50d"
+            ]
         ]
     },
     {
@@ -699,7 +701,7 @@
         "expiry": "",
         "broker": "27c07a765d141ace",
         "x": 410,
-        "y": 60,
+        "y": 120,
         "wires": []
     },
     {
@@ -715,8 +717,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 170,
-        "y": 160,
+        "x": 390,
+        "y": 220,
         "wires": [
             [
                 "254bac1924a5dc78",
@@ -777,6 +779,37 @@
             [
                 "38dadf5b727aa0c2"
             ]
+        ]
+    },
+    {
+        "id": "de26a49543ccab33",
+        "type": "ui_time_scheduler",
+        "z": "e1959e444de2b12a",
+        "group": "4ff12dc7894c7df2",
+        "name": "",
+        "startDay": 0,
+        "refresh": 60,
+        "devices": [
+            "Device 1"
+        ],
+        "singleOff": false,
+        "onlySendChange": false,
+        "customPayload": false,
+        "eventMode": false,
+        "eventOptions": [],
+        "sendTopic": false,
+        "lat": "",
+        "lon": "",
+        "customContextStore": "",
+        "outputs": 2,
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "x": 1110,
+        "y": 220,
+        "wires": [
+            [],
+            []
         ]
     }
 ]
