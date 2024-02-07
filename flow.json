@@ -894,9 +894,18 @@
         ],
         "singleOff": true,
         "onlySendChange": false,
-        "customPayload": true,
+        "customPayload": false,
         "eventMode": true,
-        "eventOptions": [],
+        "eventOptions": [
+            {
+                "label": "On",
+                "event": "true"
+            },
+            {
+                "label": "Off",
+                "event": "false"
+            }
+        ],
         "sendTopic": true,
         "lat": "",
         "lon": "",
