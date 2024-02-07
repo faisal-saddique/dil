@@ -402,7 +402,7 @@
         "type": "ui_numeric",
         "z": "e1959e444de2b12a",
         "name": "",
-        "label": "Warning Level",
+        "label": "Power Threshold Value",
         "tooltip": "Set the Power threshold here.",
         "group": "4ff12dc7894c7df2",
         "order": 1,
@@ -417,7 +417,7 @@
         "max": "999",
         "step": 1,
         "className": " ",
-        "x": 1500,
+        "x": 1530,
         "y": 700,
         "wires": [
             [
@@ -675,7 +675,7 @@
         "type": "function",
         "z": "e1959e444de2b12a",
         "name": "Check if the Power is below the threshold",
-        "func": "// Assuming the threshold is defined as a constant (you can adjust it)\nconst threshold = global.get(\"powerThresholdValue\");\n\n// Assuming the power value is in msg.payload\nconst powerValue = msg.payload;\n\n// Check if the power value is below the threshold\nif (powerValue < threshold) {\n    // Power is below the threshold, no action needed\n    return null, null;\n} else {\n    // Power is above or equal to the threshold, output a message in msg.payload\n    msg.payload = \"Power is above the defined threshold. Switch turned OFF.\";\n    return 0, msg;\n}\n",
+        "func": "// Assuming the threshold is defined as a constant (you can adjust it)\nconst threshold = global.get(\"powerThresholdValue\");\n\nif (threshold)\n{\n    // Assuming the power value is in msg.payload\n    const powerValue = msg.payload;\n\n    // Check if the power value is below the threshold\n    if (powerValue < threshold) {\n        // Power is below the threshold, no action needed\n        return null, null;\n    } else {\n        // Power is above or equal to the threshold, output a message in msg.payload\n        msg.payload = \"Power is above the defined threshold. Switch turned OFF.\";\n        return 0, msg;\n    }\n\n}",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -711,7 +711,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1750,
+        "x": 1830,
         "y": 700,
         "wires": [
             []
@@ -729,7 +729,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1680,
+        "x": 1760,
         "y": 740,
         "wires": []
     }
