@@ -912,7 +912,7 @@
         "outputs": 2,
         "order": 3,
         "width": "6",
-        "height": "8",
+        "height": "6",
         "x": 1130,
         "y": 340,
         "wires": [
