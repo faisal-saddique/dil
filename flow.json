@@ -8,6 +8,59 @@
         "env": []
     },
     {
+        "id": "0494e9094c62aa18",
+        "type": "group",
+        "z": "e1959e444de2b12a",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "3a59800e515353ce",
+            "48e0de380c081bc0",
+            "8dddcfcaa7e6c015",
+            "ab529174eeaec96a",
+            "d5bb86330a9f24d0",
+            "14597a4366296f59",
+            "9d6b76ac456068dc",
+            "e0423b6e731266d6",
+            "6826630859575d2c",
+            "30c29985eca06f82",
+            "3b65bf95ced584a8"
+        ],
+        "x": 394,
+        "y": 359,
+        "w": 272,
+        "h": 562
+    },
+    {
+        "id": "dbb1aa202dbe8cf8",
+        "type": "group",
+        "z": "e1959e444de2b12a",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "c800ba91069ec14d",
+            "ec2d79f4426dc50d"
+        ],
+        "x": 154,
+        "y": 19,
+        "w": 392,
+        "h": 82
+    },
+    {
         "id": "0385c4a0f3d45ee3",
         "type": "ui_base",
         "theme": {
@@ -252,6 +305,7 @@
         "id": "c800ba91069ec14d",
         "type": "ui_switch",
         "z": "e1959e444de2b12a",
+        "g": "dbb1aa202dbe8cf8",
         "name": "",
         "label": "switch",
         "tooltip": "",
@@ -274,8 +328,8 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 190,
-        "y": 120,
+        "x": 230,
+        "y": 60,
         "wires": [
             [
                 "ec2d79f4426dc50d"
@@ -320,8 +374,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 650,
-        "y": 220,
+        "x": 450,
+        "y": 240,
         "wires": [
             []
         ]
@@ -350,14 +404,16 @@
         "seg2": "850",
         "diff": false,
         "className": "",
-        "x": 650,
-        "y": 160,
+        "x": 450,
+        "y": 200,
         "wires": []
     },
     {
         "id": "3a59800e515353ce",
         "type": "ui_switch",
         "z": "e1959e444de2b12a",
+        "d": true,
+        "g": "0494e9094c62aa18",
         "name": "",
         "label": "Scheduled ON",
         "tooltip": "",
@@ -380,8 +436,8 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 200,
-        "y": 300,
+        "x": 500,
+        "y": 400,
         "wires": [
             []
         ]
@@ -390,6 +446,8 @@
         "id": "48e0de380c081bc0",
         "type": "ui_switch",
         "z": "e1959e444de2b12a",
+        "d": true,
+        "g": "0494e9094c62aa18",
         "name": "",
         "label": "Scheduled OFF",
         "tooltip": "",
@@ -412,8 +470,8 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 200,
-        "y": 440,
+        "x": 500,
+        "y": 540,
         "wires": [
             []
         ]
@@ -422,6 +480,8 @@
         "id": "8dddcfcaa7e6c015",
         "type": "ui_date_picker",
         "z": "e1959e444de2b12a",
+        "d": true,
+        "g": "0494e9094c62aa18",
         "name": "",
         "label": "date",
         "group": "abec11e166d3f45d",
@@ -432,8 +492,8 @@
         "topic": "payload",
         "topicType": "msg",
         "className": "",
-        "x": 210,
-        "y": 340,
+        "x": 470,
+        "y": 440,
         "wires": [
             []
         ]
@@ -442,6 +502,8 @@
         "id": "ab529174eeaec96a",
         "type": "ui_switch",
         "z": "e1959e444de2b12a",
+        "d": true,
+        "g": "0494e9094c62aa18",
         "name": "",
         "label": "Repeat",
         "tooltip": "",
@@ -464,8 +526,8 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 260,
-        "y": 640,
+        "x": 480,
+        "y": 720,
         "wires": [
             []
         ]
@@ -474,6 +536,8 @@
         "id": "d5bb86330a9f24d0",
         "type": "ui_numeric",
         "z": "e1959e444de2b12a",
+        "d": true,
+        "g": "0494e9094c62aa18",
         "name": "",
         "label": "Occurrings",
         "tooltip": "",
@@ -490,8 +554,8 @@
         "max": 10,
         "step": 1,
         "className": "",
-        "x": 250,
-        "y": 680,
+        "x": 490,
+        "y": 760,
         "wires": [
             []
         ]
@@ -500,6 +564,8 @@
         "id": "14597a4366296f59",
         "type": "ui_date_picker",
         "z": "e1959e444de2b12a",
+        "d": true,
+        "g": "0494e9094c62aa18",
         "name": "",
         "label": "Start Date",
         "group": "45e53352297e5c6a",
@@ -510,8 +576,8 @@
         "topic": "topic",
         "topicType": "msg",
         "className": "",
-        "x": 260,
-        "y": 720,
+        "x": 480,
+        "y": 800,
         "wires": [
             []
         ]
@@ -520,6 +586,8 @@
         "id": "9d6b76ac456068dc",
         "type": "ui_numeric",
         "z": "e1959e444de2b12a",
+        "d": true,
+        "g": "0494e9094c62aa18",
         "name": "",
         "label": "Running Time (Minutes)",
         "tooltip": "",
@@ -536,8 +604,8 @@
         "max": 10,
         "step": 1,
         "className": "",
-        "x": 290,
-        "y": 800,
+        "x": 530,
+        "y": 880,
         "wires": [
             []
         ]
@@ -589,7 +657,7 @@
         "step": 1,
         "className": "",
         "x": 830,
-        "y": 240,
+        "y": 220,
         "wires": [
             []
         ]
@@ -598,6 +666,8 @@
         "id": "e0423b6e731266d6",
         "type": "ui_date_picker",
         "z": "e1959e444de2b12a",
+        "d": true,
+        "g": "0494e9094c62aa18",
         "name": "",
         "label": "date",
         "group": "abec11e166d3f45d",
@@ -608,8 +678,8 @@
         "topic": "topic",
         "topicType": "msg",
         "className": "",
-        "x": 210,
-        "y": 480,
+        "x": 470,
+        "y": 580,
         "wires": [
             []
         ]
@@ -618,6 +688,8 @@
         "id": "6826630859575d2c",
         "type": "ui_text_input",
         "z": "e1959e444de2b12a",
+        "d": true,
+        "g": "0494e9094c62aa18",
         "name": "",
         "label": "",
         "tooltip": "",
@@ -632,8 +704,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 220,
-        "y": 520,
+        "x": 480,
+        "y": 620,
         "wires": [
             []
         ]
@@ -642,6 +714,8 @@
         "id": "30c29985eca06f82",
         "type": "ui_text_input",
         "z": "e1959e444de2b12a",
+        "d": true,
+        "g": "0494e9094c62aa18",
         "name": "",
         "label": "",
         "tooltip": "",
@@ -656,8 +730,8 @@
         "sendOnBlur": true,
         "className": " ",
         "topicType": "msg",
-        "x": 220,
-        "y": 380,
+        "x": 480,
+        "y": 480,
         "wires": [
             []
         ]
@@ -666,6 +740,8 @@
         "id": "3b65bf95ced584a8",
         "type": "ui_text_input",
         "z": "e1959e444de2b12a",
+        "d": true,
+        "g": "0494e9094c62aa18",
         "name": "",
         "label": "",
         "tooltip": "",
@@ -680,8 +756,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 260,
-        "y": 760,
+        "x": 480,
+        "y": 840,
         "wires": [
             []
         ]
@@ -690,6 +766,7 @@
         "id": "ec2d79f4426dc50d",
         "type": "mqtt out",
         "z": "e1959e444de2b12a",
+        "g": "dbb1aa202dbe8cf8",
         "name": "",
         "topic": "Smart_Plug-Relay",
         "qos": "",
@@ -700,8 +777,8 @@
         "correl": "",
         "expiry": "",
         "broker": "27c07a765d141ace",
-        "x": 410,
-        "y": 120,
+        "x": 430,
+        "y": 60,
         "wires": []
     },
     {
@@ -717,7 +794,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 390,
+        "x": 230,
         "y": 220,
         "wires": [
             [
@@ -805,7 +882,7 @@
         "order": 2,
         "width": 0,
         "height": 0,
-        "x": 1110,
+        "x": 1090,
         "y": 220,
         "wires": [
             [],
