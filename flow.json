@@ -622,32 +622,6 @@
         ]
     },
     {
-        "id": "51e16d3028a3a71b",
-        "type": "ui_text_input",
-        "z": "59a0bad7073bcd64",
-        "name": "",
-        "label": "",
-        "tooltip": "",
-        "group": "4529a262d878ff59",
-        "order": 7,
-        "width": 6,
-        "height": 1,
-        "passthru": true,
-        "mode": "time",
-        "delay": "100",
-        "topic": "topic",
-        "sendOnBlur": true,
-        "className": "",
-        "topicType": "msg",
-        "x": 400,
-        "y": 720,
-        "wires": [
-            [
-                "86a6716f3436b353"
-            ]
-        ]
-    },
-    {
         "id": "433ee6ae49a26ad0",
         "type": "ui_text_input",
         "z": "59a0bad7073bcd64",
@@ -862,63 +836,5 @@
         "wires": [
             []
         ]
-    },
-    {
-        "id": "86a6716f3436b353",
-        "type": "debug",
-        "z": "59a0bad7073bcd64",
-        "name": "debug 3",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 620,
-        "y": 720,
-        "wires": []
-    },
-    {
-        "id": "c83672c23423f4a4",
-        "type": "ui_text_input",
-        "z": "59a0bad7073bcd64",
-        "name": "",
-        "label": "",
-        "tooltip": "",
-        "group": "4529a262d878ff59",
-        "order": 3,
-        "width": 6,
-        "height": 1,
-        "passthru": true,
-        "mode": "time",
-        "delay": "100",
-        "topic": "topic",
-        "sendOnBlur": true,
-        "className": "",
-        "topicType": "msg",
-        "x": 400,
-        "y": 540,
-        "wires": [
-            [
-                "ab31e6193943802a"
-            ]
-        ]
-    },
-    {
-        "id": "ab31e6193943802a",
-        "type": "debug",
-        "z": "59a0bad7073bcd64",
-        "name": "debug 4",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 600,
-        "y": 540,
-        "wires": []
     }
 ]
