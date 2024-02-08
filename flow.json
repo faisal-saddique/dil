@@ -875,7 +875,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 880,
+        "x": 840,
         "y": 940,
         "wires": [
             []
@@ -1170,11 +1170,11 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 1000,
-        "y": 760,
+        "x": 1120,
+        "y": 780,
         "wires": [
             [
-                "6b12d6af15dad940"
+                "37121643f42e4951"
             ]
         ]
     },
@@ -1255,25 +1255,6 @@
         "wires": [
             [
                 "078f291cd7c79276"
-            ]
-        ]
-    },
-    {
-        "id": "6b12d6af15dad940",
-        "type": "function",
-        "z": "59a0bad7073bcd64",
-        "name": "function 4",
-        "func": "// Extract UTC timestamp from msg.payload\nvar utcTimestamp = msg.payload;\n\n// Get the local timezone dynamically\nvar localTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;\n\n// Convert UTC timestamp to local timezone\nvar localTimestamp = new Date(utcTimestamp).toLocaleString(undefined, { timeZone: localTimezone });\n\n// Create a new message with the local timestamp\nmsg.payload = localTimestamp;\n\n// Output the message\nreturn msg;\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1140,
-        "y": 760,
-        "wires": [
-            [
-                "37121643f42e4951"
             ]
         ]
     }
