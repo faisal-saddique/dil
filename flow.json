@@ -381,8 +381,8 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 200,
-        "y": 300,
+        "x": 380,
+        "y": 460,
         "wires": [
             []
         ]
@@ -413,8 +413,8 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 200,
-        "y": 440,
+        "x": 380,
+        "y": 640,
         "wires": [
             []
         ]
@@ -433,10 +433,12 @@
         "topic": "payload",
         "topicType": "msg",
         "className": "",
-        "x": 210,
-        "y": 340,
+        "x": 410,
+        "y": 500,
         "wires": [
-            []
+            [
+                "1129c37d4c1f6fbe"
+            ]
         ]
     },
     {
@@ -465,8 +467,8 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 260,
-        "y": 640,
+        "x": 400,
+        "y": 780,
         "wires": [
             []
         ]
@@ -491,8 +493,8 @@
         "max": 10,
         "step": 1,
         "className": "",
-        "x": 250,
-        "y": 680,
+        "x": 390,
+        "y": 840,
         "wires": [
             []
         ]
@@ -511,8 +513,8 @@
         "topic": "topic",
         "topicType": "msg",
         "className": "",
-        "x": 260,
-        "y": 720,
+        "x": 400,
+        "y": 900,
         "wires": [
             []
         ]
@@ -537,8 +539,8 @@
         "max": 10,
         "step": 1,
         "className": "",
-        "x": 290,
-        "y": 800,
+        "x": 350,
+        "y": 1000,
         "wires": [
             []
         ]
@@ -613,8 +615,8 @@
         "topic": "topic",
         "topicType": "msg",
         "className": "",
-        "x": 210,
-        "y": 480,
+        "x": 410,
+        "y": 680,
         "wires": [
             []
         ]
@@ -637,8 +639,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 220,
-        "y": 520,
+        "x": 400,
+        "y": 720,
         "wires": [
             []
         ]
@@ -661,8 +663,8 @@
         "sendOnBlur": true,
         "className": " ",
         "topicType": "msg",
-        "x": 220,
-        "y": 380,
+        "x": 400,
+        "y": 540,
         "wires": [
             []
         ]
@@ -685,8 +687,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 260,
-        "y": 760,
+        "x": 400,
+        "y": 940,
         "wires": [
             []
         ]
@@ -841,5 +843,21 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "1129c37d4c1f6fbe",
+        "type": "debug",
+        "z": "59a0bad7073bcd64",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 500,
+        "wires": []
     }
 ]
