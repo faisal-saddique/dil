@@ -166,17 +166,6 @@
         "className": ""
     },
     {
-        "id": "a5064f7f4fee4cd2",
-        "type": "ui_group",
-        "name": "Schedule ON/OFF",
-        "tab": "2a11c41f676a1a39",
-        "order": 6,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
         "id": "1c6f72bb4883d1d6",
         "type": "ui_group",
         "name": "Main Switch",
