@@ -917,8 +917,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 660,
-        "y": 740,
+        "x": 620,
+        "y": 720,
         "wires": []
     }
 ]
