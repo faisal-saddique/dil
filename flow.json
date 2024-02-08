@@ -1089,7 +1089,7 @@
         "type": "function",
         "z": "59a0bad7073bcd64",
         "name": "Scheduling Brain",
-        "func": "// Get current timestamp\nvar currentTime = msg.payload;\n\n// Function to convert timestamp to human-readable date and time\nfunction timestampToDateTime(timestamp) {\n    var date = new Date(timestamp);\n    return date.toLocaleString();\n}\n\n// Schedule Switch On\nif (global.get(\"scheduleOnFlag\")) {\n    var scheduleOnTime = global.get(\"scheduleOnTimeInput\");\n    var scheduleOnDate = global.get(\"scheduleOnDateInput\");\n\n    // Check if the scheduled switch-on time and date have arrived\n    if (currentTime >= scheduleOnDate && currentTime >= scheduleOnTime) {\n        node.warn(\"Scheduled Switch On time reached: \" + timestampToDateTime(currentTime));\n        msg.payload = 1; // Output 1 to indicate switch-on\n        return msg;\n    }\n}\n\n// Schedule Switch Off\nif (global.get(\"scheduleOffFlag\")) {\n    var scheduleOffTime = global.get(\"scheduleOffTimeInput\");\n    var scheduleOffDate = global.get(\"scheduleOffDateInput\");\n\n    // Check if the scheduled switch-off time and date have arrived\n    if (currentTime >= scheduleOffDate && currentTime >= scheduleOffTime) {\n        node.warn(\"Scheduled Switch Off time reached: \" + timestampToDateTime(currentTime));\n        msg.payload = 0; // Output 0 to indicate switch-off\n        return msg;\n    }\n}\n\n// Repeat Feature\nif (global.get(\"repeatOnFlag\")) {\n    var repeatStartDate = global.get(\"repeatOccuringsStartDate\");\n    var repeatStartTime = global.get(\"repeatOccuringsStartTime\");\n    var repeatRunTime = global.get(\"repeatOccuringsRunTime\");\n    var repeatOccurings = global.get(\"repeatOccuringsInput\");\n\n    // Check if the repeat start date and time have arrived\n    if (currentTime >= repeatStartDate && currentTime >= repeatStartTime) {\n        // Calculate time difference in minutes\n        var timeDiffMinutes = Math.floor((currentTime - repeatStartTime) / (60 * 1000));\n\n        // Check if the current time is within the repeat schedule\n        if (timeDiffMinutes >= 0 && timeDiffMinutes % repeatRunTime === 0) {\n            node.warn(\"Repeat Feature: \" + timestampToDateTime(currentTime));\n            msg.payload = 1; // Output 1 to indicate switch-on\n            return msg;\n        }\n    }\n}\n\n// No scheduled event reached\nreturn null;",
+        "func": "// Get current timestamp\nvar currentTime = msg.payload;\n\n// Function to convert timestamp to human-readable date and time\nfunction timestampToDateTime(timestamp) {\n    var date = new Date(timestamp);\n    return date.toLocaleString();\n}\n\n// Function to add days to a timestamp\nfunction addDays(timestamp, days) {\n    return timestamp + days * 24 * 60 * 60 * 1000; // Convert days to milliseconds\n}\n\n// Schedule Switch On\nif (global.get(\"scheduleOnFlag\")) {\n    var scheduleOnTime = global.get(\"scheduleOnTimeInput\");\n    var scheduleOnDate = global.get(\"scheduleOnDateInput\");\n\n    // Check if the scheduled switch-on time and date have arrived\n    if (currentTime >= scheduleOnDate && currentTime >= scheduleOnTime) {\n        node.warn(\"Scheduled Switch On time reached: \" + timestampToDateTime(currentTime));\n        msg.payload = 1; // Output 1 to indicate switch-on\n        return msg;\n    }\n}\n\n// Schedule Switch Off\nif (global.get(\"scheduleOffFlag\")) {\n    var scheduleOffTime = global.get(\"scheduleOffTimeInput\");\n    var scheduleOffDate = global.get(\"scheduleOffDateInput\");\n\n    // Check if the scheduled switch-off time and date have arrived\n    if (currentTime >= scheduleOffDate && currentTime >= scheduleOffTime) {\n        node.warn(\"Scheduled Switch Off time reached: \" + timestampToDateTime(currentTime));\n        msg.payload = 0; // Output 0 to indicate switch-off\n        return msg;\n    }\n}\n\n// Repeat Feature\nif (global.get(\"repeatOnFlag\")) {\n    var repeatStartDate = global.get(\"repeatOccuringsStartDate\");\n    var repeatStartTime = global.get(\"repeatOccuringsStartTime\");\n    var repeatRunTime = global.get(\"repeatOccuringsRunTime\");\n    var repeatOccurings = global.get(\"repeatOccuringsInput\");\n\n    // Check if the repeat start date and time have arrived\n    if (currentTime >= repeatStartDate && currentTime >= repeatStartTime) {\n        // Calculate time difference in minutes\n        var timeDiffMinutes = Math.floor((currentTime - repeatStartTime) / (60 * 1000));\n\n        // Check if the current time is within the repeat schedule and the number of occurrences is within the limit\n        if (timeDiffMinutes >= 0 && timeDiffMinutes % repeatRunTime === 0 && repeatOccurings > 0) {\n            node.warn(\"Repeat Feature: \" + timestampToDateTime(currentTime));\n            msg.payload = 1; // Output 1 to indicate switch-on\n            return msg;\n        }\n\n        // Check if the number of occurrences is within the limit\n        if (repeatOccurings <= 0) {\n            // No more occurrences, reset repeatOccuringsStartDate to end the schedule\n            global.set(\"repeatOccuringsStartDate\", 0);\n            return msg;\n        }\n\n        // Calculate the timestamp for the next occurrence by adding the repeatRunTime to the repeatStartDate\n        var nextOccurrenceTimestamp = addDays(repeatStartDate, repeatRunTime);\n\n        // Update repeatOccuringsStartDate for the next occurrence\n        global.set(\"repeatOccuringsStartDate\", nextOccurrenceTimestamp);\n\n        // Decrement the remaining occurrences\n        global.set(\"repeatOccuringsInput\", repeatOccurings - 1);\n\n        // Log the next occurrence\n        node.warn(\"Next Repeat Feature Occurrence: \" + timestampToDateTime(nextOccurrenceTimestamp));\n    }\n}\n\n// No scheduled event reached\nreturn null;\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1173,7 +1173,7 @@
         "y": 760,
         "wires": [
             [
-                "944e382433ae4865"
+                "37121643f42e4951"
             ]
         ]
     },
@@ -1189,8 +1189,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1300,
-        "y": 780,
+        "x": 1480,
+        "y": 740,
         "wires": []
     },
     {
@@ -1206,6 +1206,25 @@
         "wires": [
             [
                 "eb282b9f801f4f0c"
+            ]
+        ]
+    },
+    {
+        "id": "37121643f42e4951",
+        "type": "function",
+        "z": "59a0bad7073bcd64",
+        "name": "function 1",
+        "func": "// Extract UTC timestamp from msg.payload\nvar utcTimestamp = msg.payload;\n\n// Convert UTC timestamp to local timezone\nvar localTimestamp = new Date(utcTimestamp).toLocaleString(undefined, { timeZone: 'your_local_timezone_here' });\n\n// Create a new message with the local timestamp\nmsg.payload = localTimestamp;\n\n// Output the message\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1280,
+        "y": 760,
+        "wires": [
+            [
+                "944e382433ae4865"
             ]
         ]
     }
