@@ -495,8 +495,8 @@
         "topic": "repeatOccuringsInput",
         "topicType": "str",
         "format": "{{value}}",
-        "min": 0,
-        "max": 10,
+        "min": "1",
+        "max": "7",
         "step": 1,
         "className": "",
         "x": 530,
@@ -929,7 +929,7 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "10",
+        "payload": "5",
         "payloadType": "num",
         "x": 190,
         "y": 780,
@@ -1061,27 +1061,12 @@
         "mode": "link",
         "links": [
             "454a3f3d3818b631",
-            "4761fa88b71ee202"
+            "4761fa88b71ee202",
+            "2ecdb6ea1e8b891f"
         ],
         "x": 275,
         "y": 780,
         "wires": []
-    },
-    {
-        "id": "454a3f3d3818b631",
-        "type": "link in",
-        "z": "59a0bad7073bcd64",
-        "name": "link in 7",
-        "links": [
-            "d0e98a42b017c3a2"
-        ],
-        "x": 425,
-        "y": 1060,
-        "wires": [
-            [
-                "eb282b9f801f4f0c"
-            ]
-        ]
     },
     {
         "id": "4761fa88b71ee202",
@@ -1207,5 +1192,21 @@
         "x": 1300,
         "y": 780,
         "wires": []
+    },
+    {
+        "id": "2ecdb6ea1e8b891f",
+        "type": "link in",
+        "z": "59a0bad7073bcd64",
+        "name": "link in 9",
+        "links": [
+            "d0e98a42b017c3a2"
+        ],
+        "x": 435,
+        "y": 1060,
+        "wires": [
+            [
+                "eb282b9f801f4f0c"
+            ]
+        ]
     }
 ]
