@@ -633,13 +633,13 @@
         "width": 6,
         "height": 1,
         "passthru": true,
-        "mode": "datetime-local",
+        "mode": "time",
         "delay": "100",
         "topic": "topic",
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 430,
+        "x": 400,
         "y": 720,
         "wires": [
             [
