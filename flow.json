@@ -902,11 +902,11 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 130,
-        "y": 660,
+        "x": 170,
+        "y": 740,
         "wires": [
             [
-                "e5fc31e84efe1ea4"
+                "79d7b79558c35a18"
             ]
         ]
     },
@@ -1125,11 +1125,11 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 1150,
-        "y": 1000,
+        "x": 1250,
+        "y": 940,
         "wires": [
             [
-                "1f76ddcc91dfe591"
+                "4a45499929274a07"
             ]
         ]
     },
@@ -1221,7 +1221,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1280,
+        "x": 1300,
         "y": 760,
         "wires": [
             [
@@ -1255,44 +1255,6 @@
         "wires": [
             [
                 "078f291cd7c79276"
-            ]
-        ]
-    },
-    {
-        "id": "e5fc31e84efe1ea4",
-        "type": "function",
-        "z": "59a0bad7073bcd64",
-        "name": "function 2",
-        "func": "// Extract UTC timestamp from msg.payload\nvar utcTimestamp = msg.payload;\n\n// Get the local timezone dynamically\nvar localTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;\n\n// Convert UTC timestamp to local timezone\nvar localTimestamp = new Date(utcTimestamp).toLocaleString(undefined, { timeZone: localTimezone });\n\n// Create a new message with the local timestamp\nmsg.payload = localTimestamp;\n\n// Output the message\nreturn msg;\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 220,
-        "y": 700,
-        "wires": [
-            [
-                "79d7b79558c35a18"
-            ]
-        ]
-    },
-    {
-        "id": "1f76ddcc91dfe591",
-        "type": "function",
-        "z": "59a0bad7073bcd64",
-        "name": "function 3",
-        "func": "// Extract UTC timestamp from msg.payload\nvar utcTimestamp = msg.payload;\n\n// Get the local timezone dynamically\nvar localTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;\n\n// Convert UTC timestamp to local timezone\nvar localTimestamp = new Date(utcTimestamp).toLocaleString(undefined, { timeZone: localTimezone });\n\n// Create a new message with the local timestamp\nmsg.payload = localTimestamp;\n\n// Output the message\nreturn msg;\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1300,
-        "y": 920,
-        "wires": [
-            [
-                "4a45499929274a07"
             ]
         ]
     },
