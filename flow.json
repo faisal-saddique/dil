@@ -1099,7 +1099,8 @@
         "y": 940,
         "wires": [
             [
-                "83e1d0722edfae02"
+                "83e1d0722edfae02",
+                "b5bcc99e7a0a500f"
             ]
         ]
     },
@@ -1244,6 +1245,35 @@
         "wires": [
             [
                 "79d7b79558c35a18"
+            ]
+        ]
+    },
+    {
+        "id": "b5bcc99e7a0a500f",
+        "type": "link out",
+        "z": "59a0bad7073bcd64",
+        "name": "link out 3",
+        "mode": "link",
+        "links": [
+            "4d0ef71d5b4ac7d6"
+        ],
+        "x": 1665,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "4d0ef71d5b4ac7d6",
+        "type": "link in",
+        "z": "59a0bad7073bcd64",
+        "name": "link in 10",
+        "links": [
+            "b5bcc99e7a0a500f"
+        ],
+        "x": 1065,
+        "y": 480,
+        "wires": [
+            [
+                "078f291cd7c79276"
             ]
         ]
     }
