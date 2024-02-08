@@ -1215,7 +1215,7 @@
         "type": "function",
         "z": "59a0bad7073bcd64",
         "name": "function 1",
-        "func": "// Extract UTC timestamp from msg.payload\nvar utcTimestamp = msg.payload;\n\nnode.warn(`Value type: ${utcTimestamp.type}`);\n\n// Convert UTC timestamp to local timezone\nvar localTimestamp = new Date(utcTimestamp);\n\n// Create a new message with the local timestamp\nmsg.payload = localTimestamp;\n\n// Output the message\nreturn msg;",
+        "func": "// Get the current UTC timestamp\nvar utcTimestamp = new Date().toISOString();\n\n// Get the local timezone dynamically\nvar localTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;\n\n// Convert UTC timestamp to local timezone\nvar localTimestamp = new Date(utcTimestamp);\n\n// Get the UTC offset in minutes\nvar utcOffsetMinutes = localTimestamp.getTimezoneOffset();\n\n// Adjust the timestamp by adding the UTC offset\nlocalTimestamp.setMinutes(localTimestamp.getMinutes() - utcOffsetMinutes);\n\n// Output the local timestamp\nmsg.payload = localTimestamp;\n\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
