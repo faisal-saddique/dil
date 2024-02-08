@@ -384,7 +384,9 @@
         "x": 380,
         "y": 460,
         "wires": [
-            []
+            [
+                "9dd1c1159802e8d1"
+            ]
         ]
     },
     {
@@ -416,7 +418,9 @@
         "x": 380,
         "y": 620,
         "wires": [
-            []
+            [
+                "9dd1c1159802e8d1"
+            ]
         ]
     },
     {
@@ -437,7 +441,7 @@
         "y": 500,
         "wires": [
             [
-                "1129c37d4c1f6fbe"
+                "9dd1c1159802e8d1"
             ]
         ]
     },
@@ -470,7 +474,9 @@
         "x": 400,
         "y": 780,
         "wires": [
-            []
+            [
+                "9dd1c1159802e8d1"
+            ]
         ]
     },
     {
@@ -496,7 +502,9 @@
         "x": 390,
         "y": 840,
         "wires": [
-            []
+            [
+                "9dd1c1159802e8d1"
+            ]
         ]
     },
     {
@@ -516,7 +524,9 @@
         "x": 400,
         "y": 900,
         "wires": [
-            []
+            [
+                "9dd1c1159802e8d1"
+            ]
         ]
     },
     {
@@ -542,7 +552,9 @@
         "x": 350,
         "y": 1000,
         "wires": [
-            []
+            [
+                "9dd1c1159802e8d1"
+            ]
         ]
     },
     {
@@ -618,7 +630,9 @@
         "x": 410,
         "y": 660,
         "wires": [
-            []
+            [
+                "9dd1c1159802e8d1"
+            ]
         ]
     },
     {
@@ -642,7 +656,9 @@
         "x": 400,
         "y": 940,
         "wires": [
-            []
+            [
+                "9dd1c1159802e8d1"
+            ]
         ]
     },
     {
@@ -797,47 +813,6 @@
         ]
     },
     {
-        "id": "1129c37d4c1f6fbe",
-        "type": "debug",
-        "z": "59a0bad7073bcd64",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 600,
-        "y": 500,
-        "wires": []
-    },
-    {
-        "id": "e32c4faf8e97a168",
-        "type": "change",
-        "z": "59a0bad7073bcd64",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 840,
-        "y": 580,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "cefcfde6022fa753",
         "type": "ui_text_input",
         "z": "59a0bad7073bcd64",
@@ -859,25 +834,9 @@
         "y": 540,
         "wires": [
             [
-                "33f1582b06655854"
+                "9dd1c1159802e8d1"
             ]
         ]
-    },
-    {
-        "id": "33f1582b06655854",
-        "type": "debug",
-        "z": "59a0bad7073bcd64",
-        "name": "debug 2",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 600,
-        "y": 540,
-        "wires": []
     },
     {
         "id": "50871911fdc8f4e7",
@@ -899,6 +858,25 @@
         "topicType": "msg",
         "x": 400,
         "y": 700,
+        "wires": [
+            [
+                "9dd1c1159802e8d1"
+            ]
+        ]
+    },
+    {
+        "id": "9dd1c1159802e8d1",
+        "type": "function",
+        "z": "59a0bad7073bcd64",
+        "name": "Set Global Variables",
+        "func": "// Extract topic from msg\nvar topic = msg.topic;\n\n// Check topic and set global variable accordingly\nswitch (topic) {\n    case \"scheduleOnFlag\":\n        global.set(topic, msg.payload);\n        break;\n    case \"scheduleOnDateInput\":\n        global.set(topic, msg.payload);\n        break;\n    case \"scheduleOnTimeInput\":\n        global.set(topic, msg.payload);\n        break;\n    case \"scheduleOffFlag\":\n        global.set(topic, msg.payload);\n        break;\n    case \"scheduleOffDateInput\":\n        global.set(topic, msg.payload);\n        break;\n    case \"scheduleOffTimeInput\":\n        global.set(topic, msg.payload);\n        break;\n    case \"repeatOnFlag\":\n        global.set(topic, msg.payload);\n        break;\n    case \"repeatOccuringsInput\":\n        global.set(topic, msg.payload);\n        break;\n    case \"repeatOccuringsStartDate\":\n        global.set(topic, msg.payload);\n        break;\n    case \"repeatOccuringsStartTime\":\n        global.set(topic, msg.payload);\n        break;\n    case \"repeatOccuringsRunTime\":\n        global.set(topic, msg.payload);\n        break;\n\n    // Handle unknown topics if needed\n    default:\n        node.warn(\"Unknown topic: \" + topic);\n        break;\n}\n\n// Return the original msg for further processing in the flow\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 740,
         "wires": [
             []
         ]
