@@ -1,60 +1,11 @@
 [
     {
-        "id": "e1959e444de2b12a",
-        "type": "tab",
-        "label": "Flow 5",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
         "id": "59a0bad7073bcd64",
         "type": "tab",
         "label": "Flow 5",
         "disabled": false,
         "info": "",
         "env": []
-    },
-    {
-        "id": "dbb1aa202dbe8cf8",
-        "type": "group",
-        "z": "e1959e444de2b12a",
-        "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
-            "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
-        },
-        "nodes": [
-            "c800ba91069ec14d",
-            "ec2d79f4426dc50d"
-        ],
-        "x": 1614,
-        "y": 419,
-        "w": 452,
-        "h": 82
-    },
-    {
-        "id": "fcad153adbab4cf1",
-        "type": "group",
-        "z": "e1959e444de2b12a",
-        "name": "Power Histogram & Gauge ",
-        "style": {
-            "fill": "#ffffff",
-            "label": true
-        },
-        "nodes": [
-            "f302c672f2ebecc5",
-            "254bac1924a5dc78",
-            "9d30a68b4accdb31"
-        ],
-        "x": 974,
-        "y": 619,
-        "w": 372,
-        "h": 122
     },
     {
         "id": "0385c4a0f3d45ee3",
@@ -226,66 +177,6 @@
         "className": ""
     },
     {
-        "id": "8c29c4add7840a02",
-        "type": "ui_spacer",
-        "z": "e1959e444de2b12a",
-        "name": "spacer",
-        "group": "abec11e166d3f45d",
-        "order": 3,
-        "width": 6,
-        "height": 1
-    },
-    {
-        "id": "3aaf821ea26c54ab",
-        "type": "ui_spacer",
-        "z": "e1959e444de2b12a",
-        "name": "spacer",
-        "group": "abec11e166d3f45d",
-        "order": 5,
-        "width": 6,
-        "height": 1
-    },
-    {
-        "id": "74acc66e9651bdbb",
-        "type": "ui_spacer",
-        "z": "e1959e444de2b12a",
-        "name": "spacer",
-        "group": "45e53352297e5c6a",
-        "order": 2,
-        "width": 6,
-        "height": 1
-    },
-    {
-        "id": "16e63ba935b2929a",
-        "type": "ui_spacer",
-        "z": "e1959e444de2b12a",
-        "name": "spacer",
-        "group": "45e53352297e5c6a",
-        "order": 3,
-        "width": 6,
-        "height": 1
-    },
-    {
-        "id": "32634981c57e8088",
-        "type": "ui_spacer",
-        "z": "e1959e444de2b12a",
-        "name": "spacer",
-        "group": "45e53352297e5c6a",
-        "order": 5,
-        "width": 6,
-        "height": 1
-    },
-    {
-        "id": "fe7acf89c0b980ab",
-        "type": "ui_spacer",
-        "z": "e1959e444de2b12a",
-        "name": "spacer",
-        "group": "45e53352297e5c6a",
-        "order": 8,
-        "width": 6,
-        "height": 1
-    },
-    {
         "id": "b799eddd1eabb474",
         "type": "ui_group",
         "name": "Smart Plug Switch",
@@ -440,570 +331,6 @@
         "sessionExpiry": ""
     },
     {
-        "id": "c800ba91069ec14d",
-        "type": "ui_switch",
-        "z": "e1959e444de2b12a",
-        "g": "dbb1aa202dbe8cf8",
-        "name": "Smart Plug Switch",
-        "label": "Smart Plug Switch",
-        "tooltip": "Turn the Smart Plug ON/OFF.",
-        "group": "b799eddd1eabb474",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "decouple": "false",
-        "topic": "topic",
-        "topicType": "msg",
-        "style": "",
-        "onvalue": "1",
-        "onvalueType": "num",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "0",
-        "offvalueType": "num",
-        "officon": "",
-        "offcolor": "",
-        "animate": false,
-        "className": "",
-        "x": 1730,
-        "y": 460,
-        "wires": [
-            [
-                "ec2d79f4426dc50d",
-                "ed0de2cdbbb77317"
-            ]
-        ]
-    },
-    {
-        "id": "f302c672f2ebecc5",
-        "type": "ui_chart",
-        "z": "e1959e444de2b12a",
-        "g": "fcad153adbab4cf1",
-        "name": "",
-        "group": "b8d2d09c504dbf58",
-        "order": 1,
-        "width": 6,
-        "height": 4,
-        "label": "Power",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "HH:mm:ss",
-        "interpolate": "cubic",
-        "nodata": "",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": 1,
-        "removeOlderPoints": "",
-        "removeOlderUnit": "3600",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 1270,
-        "y": 700,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "254bac1924a5dc78",
-        "type": "ui_gauge",
-        "z": "e1959e444de2b12a",
-        "g": "fcad153adbab4cf1",
-        "name": "",
-        "group": "b8d2d09c504dbf58",
-        "order": 2,
-        "width": 6,
-        "height": 3,
-        "gtype": "gage",
-        "title": "Power",
-        "label": "Watts",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "1200",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "500",
-        "seg2": "850",
-        "diff": false,
-        "className": "",
-        "x": 1270,
-        "y": 660,
-        "wires": []
-    },
-    {
-        "id": "c3757bd60e760a8a",
-        "type": "ui_numeric",
-        "z": "e1959e444de2b12a",
-        "name": "",
-        "label": "Power Threshold Value",
-        "tooltip": "Set the Power threshold here.",
-        "group": "4ff12dc7894c7df2",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "wrap": true,
-        "passthru": true,
-        "topic": "Warning",
-        "topicType": "str",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "999",
-        "step": 1,
-        "className": " ",
-        "x": 1530,
-        "y": 700,
-        "wires": [
-            [
-                "e9c10a5d2742f68b",
-                "baa9da29506a3672"
-            ]
-        ]
-    },
-    {
-        "id": "ec2d79f4426dc50d",
-        "type": "mqtt out",
-        "z": "e1959e444de2b12a",
-        "g": "dbb1aa202dbe8cf8",
-        "name": "",
-        "topic": "Smart_Plug-Relay",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "27c07a765d141ace",
-        "x": 1950,
-        "y": 460,
-        "wires": []
-    },
-    {
-        "id": "9d30a68b4accdb31",
-        "type": "mqtt in",
-        "z": "e1959e444de2b12a",
-        "g": "fcad153adbab4cf1",
-        "name": "",
-        "topic": "Power",
-        "qos": "2",
-        "datatype": "auto-detect",
-        "broker": "27c07a765d141ace",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 1050,
-        "y": 680,
-        "wires": [
-            [
-                "254bac1924a5dc78",
-                "f302c672f2ebecc5",
-                "92ecbd5f190479ca"
-            ]
-        ]
-    },
-    {
-        "id": "38dadf5b727aa0c2",
-        "type": "ui_toast",
-        "z": "e1959e444de2b12a",
-        "position": "dialog",
-        "displayTime": "2",
-        "highlight": "",
-        "sendall": true,
-        "outputs": 1,
-        "ok": "OK",
-        "cancel": "",
-        "raw": false,
-        "className": "",
-        "topic": "",
-        "name": "",
-        "x": 1710,
-        "y": 560,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "de26a49543ccab33",
-        "type": "ui_time_scheduler",
-        "z": "e1959e444de2b12a",
-        "group": "a5064f7f4fee4cd2",
-        "name": "On/Off Scheduler",
-        "startDay": 0,
-        "refresh": 60,
-        "devices": [
-            "Smart Plug"
-        ],
-        "singleOff": true,
-        "onlySendChange": false,
-        "customPayload": false,
-        "eventMode": true,
-        "eventOptions": [
-            {
-                "label": "On",
-                "event": "true"
-            },
-            {
-                "label": "Off",
-                "event": "false"
-            }
-        ],
-        "sendTopic": true,
-        "lat": "",
-        "lon": "",
-        "customContextStore": "",
-        "outputs": 2,
-        "order": 1,
-        "width": 6,
-        "height": 3,
-        "x": 1130,
-        "y": 340,
-        "wires": [
-            [
-                "df006209b4ad5501",
-                "5b3239a98d190a48"
-            ],
-            [
-                "3786f7057f0b4039",
-                "86d4b49ade172fdb"
-            ]
-        ]
-    },
-    {
-        "id": "df006209b4ad5501",
-        "type": "debug",
-        "z": "e1959e444de2b12a",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1400,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "5b3239a98d190a48",
-        "type": "file",
-        "z": "e1959e444de2b12a",
-        "name": "",
-        "filename": "./schedules/schedule_on_off.txt",
-        "filenameType": "str",
-        "appendNewline": true,
-        "createDir": true,
-        "overwriteFile": "true",
-        "encoding": "none",
-        "x": 1470,
-        "y": 320,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "d08e8872dfadc391",
-        "type": "file in",
-        "z": "e1959e444de2b12a",
-        "name": "",
-        "filename": "./schedules/schedule_on_off.txt",
-        "filenameType": "str",
-        "format": "utf8",
-        "chunk": false,
-        "sendError": false,
-        "encoding": "none",
-        "allProps": false,
-        "x": 850,
-        "y": 400,
-        "wires": [
-            [
-                "de26a49543ccab33",
-                "fc0770c0e77010de"
-            ]
-        ]
-    },
-    {
-        "id": "45d038a265d38ca6",
-        "type": "inject",
-        "z": "e1959e444de2b12a",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 610,
-        "y": 400,
-        "wires": [
-            [
-                "d08e8872dfadc391"
-            ]
-        ]
-    },
-    {
-        "id": "fc0770c0e77010de",
-        "type": "debug",
-        "z": "e1959e444de2b12a",
-        "name": "debug 2",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1100,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "3786f7057f0b4039",
-        "type": "debug",
-        "z": "e1959e444de2b12a",
-        "name": "debug 3",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1400,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "86d4b49ade172fdb",
-        "type": "function",
-        "z": "e1959e444de2b12a",
-        "name": "Convert Bool to 1 and 0",
-        "func": "if (msg.payload) msg.payload = 1;\nelse msg.payload = 0;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1450,
-        "y": 460,
-        "wires": [
-            [
-                "c800ba91069ec14d"
-            ]
-        ]
-    },
-    {
-        "id": "92ecbd5f190479ca",
-        "type": "function",
-        "z": "e1959e444de2b12a",
-        "name": "Check if the Power is below the threshold",
-        "func": "// Assuming the threshold is defined as a constant (you can adjust it)\nconst threshold = global.get(\"powerThresholdValue\");\n\nnode.warn(\"inside the logic function\");\n\n// Assuming the power value is in msg.payload\nconst powerValue = msg.payload;\n\n// Check if the power value is below the threshold\nif (powerValue < threshold) {\n    // Power is below the threshold, no action needed\n    return [null, null];\n} else {\n    var msg2 = {payload: 0};\n    // Power is above or equal to the threshold, output a message in msg.payload\n    msg.payload = \"Power is above the defined threshold. Switch turned OFF.\";\n    if (global.get(\"switchStatus\")) return [msg2, msg];\n    else return [null, null];\n}",
-        "outputs": 2,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1400,
-        "y": 560,
-        "wires": [
-            [
-                "c800ba91069ec14d"
-            ],
-            [
-                "38dadf5b727aa0c2"
-            ]
-        ]
-    },
-    {
-        "id": "e9c10a5d2742f68b",
-        "type": "change",
-        "z": "e1959e444de2b12a",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "powerThresholdValue",
-                "pt": "global",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1830,
-        "y": 700,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "baa9da29506a3672",
-        "type": "debug",
-        "z": "e1959e444de2b12a",
-        "name": "debug 4",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1760,
-        "y": 740,
-        "wires": []
-    },
-    {
-        "id": "922ba304157c12db",
-        "type": "inject",
-        "z": "e1959e444de2b12a",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 1520,
-        "y": 860,
-        "wires": [
-            [
-                "259ea3116d007529"
-            ]
-        ]
-    },
-    {
-        "id": "259ea3116d007529",
-        "type": "change",
-        "z": "e1959e444de2b12a",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "powerThresholdValue",
-                "tot": "global"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1700,
-        "y": 860,
-        "wires": [
-            [
-                "42df15b488da18ff"
-            ]
-        ]
-    },
-    {
-        "id": "42df15b488da18ff",
-        "type": "debug",
-        "z": "e1959e444de2b12a",
-        "name": "debug 6",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1860,
-        "y": 860,
-        "wires": []
-    },
-    {
-        "id": "8bae2ced4bb0b20d",
-        "type": "inject",
-        "z": "e1959e444de2b12a",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "ABOVE THRESHOLD. PLUG TURNED OFF.",
-        "payloadType": "str",
-        "x": 1510,
-        "y": 600,
-        "wires": [
-            [
-                "38dadf5b727aa0c2"
-            ]
-        ]
-    },
-    {
-        "id": "ed0de2cdbbb77317",
-        "type": "function",
-        "z": "e1959e444de2b12a",
-        "name": "Set Switch Status",
-        "func": "if (msg.payload==1) global.set(\"switchStatus\",true);\nelse global.set(\"switchStatus\",false);",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1950,
-        "y": 400,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "078f291cd7c79276",
         "type": "ui_switch",
         "z": "59a0bad7073bcd64",
@@ -1029,10 +356,13 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 170,
-        "y": 60,
+        "x": 830,
+        "y": 320,
         "wires": [
-            []
+            [
+                "cfb160fe261c9ee1",
+                "233f2b7de80e238c"
+            ]
         ]
     },
     {
@@ -1073,7 +403,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 650,
+        "x": 510,
         "y": 220,
         "wires": [
             []
@@ -1103,7 +433,7 @@
         "seg2": "850",
         "diff": false,
         "className": "",
-        "x": 650,
+        "x": 510,
         "y": 160,
         "wires": []
     },
@@ -1316,9 +646,11 @@
         "step": 1,
         "className": " ",
         "x": 820,
-        "y": 180,
+        "y": 160,
         "wires": [
-            []
+            [
+                "14ac5712b2a88231"
+            ]
         ]
     },
     {
@@ -1341,10 +673,12 @@
         "max": 10,
         "step": 1,
         "className": "",
-        "x": 830,
-        "y": 240,
+        "x": 810,
+        "y": 200,
         "wires": [
-            []
+            [
+                "17573b9cf5a85577"
+            ]
         ]
     },
     {
@@ -1453,8 +787,8 @@
         "correl": "",
         "expiry": "",
         "broker": "27c07a765d141ace",
-        "x": 430,
-        "y": 40,
+        "x": 1050,
+        "y": 340,
         "wires": []
     },
     {
@@ -1470,12 +804,13 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 170,
-        "y": 160,
+        "x": 250,
+        "y": 200,
         "wires": [
             [
                 "0507fd99b41c1fd1",
-                "fb6ce91e8d83d26b"
+                "fb6ce91e8d83d26b",
+                "6fadec28fb15d12c"
             ]
         ]
     },
@@ -1494,31 +829,63 @@
         "className": "",
         "topic": "",
         "name": "",
-        "x": 1230,
-        "y": 80,
+        "x": 850,
+        "y": 280,
         "wires": [
             []
         ]
     },
     {
-        "id": "f520dba9cdf3b902",
+        "id": "cfb160fe261c9ee1",
+        "type": "function",
+        "z": "59a0bad7073bcd64",
+        "name": "Set Switch Status",
+        "func": "if (msg.payload==1) global.set(\"switchStatus\",true);\nelse global.set(\"switchStatus\",false);",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1050,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6fadec28fb15d12c",
+        "type": "function",
+        "z": "59a0bad7073bcd64",
+        "name": "Check if the Power is below the threshold",
+        "func": "// Assuming the threshold is defined as a constant (you can adjust it)\nconst warningLevel = global.get(\"warningLevel\");\nconst cutOffLevel = global.get(\"cutOffLevel\");\n\n// Assuming the power value is in msg.payload\nconst powerValue = msg.payload;\n\n// Check if the power value is below the threshold\nif (powerValue < warningLevel) {\n    // Power is below the warning level, no action needed\n    return [null, null];\n} else {\n    var msg1 = { payload: null };\n    var msg2 = { payload: 0 };\n\n    // Check if power exceeds warning level\n    if (powerValue >= warningLevel && powerValue < cutOffLevel) {\n        // Power is above or equal to warning level, output a warning message\n        msg1.payload = \"WARNING: Power is above the warning level.\";\n        return [msg1, null];\n    } else if (powerValue >= cutOffLevel) {\n        // Power is above or equal to cutoff level, output a warning message and turn off the switch\n        msg1.payload = \"ALERT: Power is above the cutoff level. Switch turned OFF.\";\n        if (global.get(\"switchStatus\")) return [msg1, msg2];\n        else return [null, null];\n    } else {\n        // Power is between warning level and cutoff level, no action needed\n        return [null, null];\n    }\n}\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 300,
+        "wires": [
+            [
+                "377fcc23db7c3cd3"
+            ],
+            [
+                "078f291cd7c79276"
+            ]
+        ]
+    },
+    {
+        "id": "14ac5712b2a88231",
         "type": "change",
         "z": "59a0bad7073bcd64",
         "name": "",
         "rules": [
             {
                 "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "Warning !",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "The power drawn exceeds the warning threshold.",
-                "tot": "str"
+                "p": "warningLevel",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
             }
         ],
         "action": "",
@@ -1526,12 +893,35 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1020,
-        "y": 80,
+        "x": 1050,
+        "y": 160,
         "wires": [
-            [
-                "377fcc23db7c3cd3"
-            ]
+            []
+        ]
+    },
+    {
+        "id": "17573b9cf5a85577",
+        "type": "change",
+        "z": "59a0bad7073bcd64",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "cutOffLevel",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1040,
+        "y": 200,
+        "wires": [
+            []
         ]
     }
 ]
