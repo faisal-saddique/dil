@@ -1189,8 +1189,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1480,
-        "y": 740,
+        "x": 1460,
+        "y": 760,
         "wires": []
     },
     {
@@ -1214,7 +1214,7 @@
         "type": "function",
         "z": "59a0bad7073bcd64",
         "name": "function 1",
-        "func": "// Extract UTC timestamp from msg.payload\nvar utcTimestamp = msg.payload;\n\n// Convert UTC timestamp to local timezone\nvar localTimestamp = new Date(utcTimestamp).toLocaleString(undefined, { timeZone: 'your_local_timezone_here' });\n\n// Create a new message with the local timestamp\nmsg.payload = localTimestamp;\n\n// Output the message\nreturn msg;\n",
+        "func": "// Extract UTC timestamp from msg.payload\nvar utcTimestamp = msg.payload;\n\n// Get the local timezone dynamically\nvar localTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;\n\n// Convert UTC timestamp to local timezone\nvar localTimestamp = new Date(utcTimestamp).toLocaleString(undefined, { timeZone: localTimezone });\n\n// Create a new message with the local timestamp\nmsg.payload = localTimestamp;\n\n// Output the message\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
