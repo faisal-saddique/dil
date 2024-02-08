@@ -902,11 +902,70 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 140,
-        "y": 560,
+        "x": 260,
+        "y": 500,
         "wires": [
             [
-                "69decd9c3a0fe0f8"
+                "69decd9c3a0fe0f8",
+                "cefcfde6022fa753"
+            ]
+        ]
+    },
+    {
+        "id": "6b8fbb916ea35432",
+        "type": "inject",
+        "z": "59a0bad7073bcd64",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 240,
+        "y": 900,
+        "wires": [
+            [
+                "05c51c0b26b33bdc"
+            ]
+        ]
+    },
+    {
+        "id": "717a9440a5323787",
+        "type": "inject",
+        "z": "59a0bad7073bcd64",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 260,
+        "y": 660,
+        "wires": [
+            [
+                "25ac4e6648b3254d"
             ]
         ]
     }
