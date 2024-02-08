@@ -602,7 +602,7 @@
         "topicType": "msg",
         "format": "{{value}}",
         "min": 0,
-        "max": 10,
+        "max": "999",
         "step": 1,
         "className": "",
         "x": 1130,
@@ -1426,8 +1426,8 @@
         "topic": "",
         "payload": "200",
         "payloadType": "num",
-        "x": 1030,
-        "y": 220,
+        "x": 950,
+        "y": 240,
         "wires": [
             [
                 "99752a5e8390a17d",
