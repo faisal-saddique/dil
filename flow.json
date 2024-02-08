@@ -657,8 +657,7 @@
         "y": 1160,
         "wires": [
             [
-                "9dd1c1159802e8d1",
-                "2d3673d14322e850"
+                "9dd1c1159802e8d1"
             ]
         ]
     },
@@ -835,8 +834,7 @@
         "y": 760,
         "wires": [
             [
-                "9dd1c1159802e8d1",
-                "2d3673d14322e850"
+                "9dd1c1159802e8d1"
             ]
         ]
     },
@@ -862,8 +860,7 @@
         "y": 920,
         "wires": [
             [
-                "9dd1c1159802e8d1",
-                "2d3673d14322e850"
+                "9dd1c1159802e8d1"
             ]
         ]
     },
@@ -878,8 +875,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 840,
-        "y": 960,
+        "x": 880,
+        "y": 940,
         "wires": [
             []
         ]
@@ -1103,7 +1100,55 @@
         ]
     },
     {
-        "id": "2d3673d14322e850",
+        "id": "4a45499929274a07",
+        "type": "function",
+        "z": "59a0bad7073bcd64",
+        "name": "Scheduling Brain",
+        "func": "// Get current timestamp\nvar currentTime = msg.payload;\n\n// Function to convert timestamp to human-readable date and time\nfunction timestampToDateTime(timestamp) {\n    var date = new Date(timestamp);\n    return date.toLocaleString();\n}\n\n// Schedule Switch On\nif (global.get(\"scheduleOnFlag\")) {\n    var scheduleOnTime = global.get(\"scheduleOnTimeInput\");\n    var scheduleOnDate = global.get(\"scheduleOnDateInput\");\n\n    // Check if the scheduled switch-on time and date have arrived\n    if (currentTime >= scheduleOnDate && currentTime >= scheduleOnTime) {\n        node.warn(\"Scheduled Switch On time reached: \" + timestampToDateTime(currentTime));\n        msg.payload = 1; // Output 1 to indicate switch-on\n        return msg;\n    }\n}\n\n// Schedule Switch Off\nif (global.get(\"scheduleOffFlag\")) {\n    var scheduleOffTime = global.get(\"scheduleOffTimeInput\");\n    var scheduleOffDate = global.get(\"scheduleOffDateInput\");\n\n    // Check if the scheduled switch-off time and date have arrived\n    if (currentTime >= scheduleOffDate && currentTime >= scheduleOffTime) {\n        node.warn(\"Scheduled Switch Off time reached: \" + timestampToDateTime(currentTime));\n        msg.payload = 0; // Output 0 to indicate switch-off\n        return msg;\n    }\n}\n\n// Repeat Feature\nif (global.get(\"repeatOnFlag\")) {\n    var repeatStartDate = global.get(\"repeatOccuringsStartDate\");\n    var repeatStartTime = global.get(\"repeatOccuringsStartTime\");\n    var repeatRunTime = global.get(\"repeatOccuringsRunTime\");\n    var repeatOccurings = global.get(\"repeatOccuringsInput\");\n\n    // Check if the repeat start date and time have arrived\n    if (currentTime >= repeatStartDate && currentTime >= repeatStartTime) {\n        // Calculate time difference in minutes\n        var timeDiffMinutes = Math.floor((currentTime - repeatStartTime) / (60 * 1000));\n\n        // Check if the current time is within the repeat schedule\n        if (timeDiffMinutes >= 0 && timeDiffMinutes % repeatRunTime === 0) {\n            node.warn(\"Repeat Feature: \" + timestampToDateTime(currentTime));\n            msg.payload = 1; // Output 1 to indicate switch-on\n            return msg;\n        }\n    }\n}\n\n// No scheduled event reached\nmsg.payload = -1;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1510,
+        "y": 940,
+        "wires": [
+            [
+                "83e1d0722edfae02"
+            ]
+        ]
+    },
+    {
+        "id": "d6e2ce968039b14d",
+        "type": "inject",
+        "z": "59a0bad7073bcd64",
+        "name": "Trigger the brain each second",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1250,
+        "y": 940,
+        "wires": [
+            [
+                "4a45499929274a07"
+            ]
+        ]
+    },
+    {
+        "id": "83e1d0722edfae02",
         "type": "debug",
         "z": "59a0bad7073bcd64",
         "name": "debug 1",
@@ -1114,8 +1159,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 960,
-        "y": 800,
+        "x": 1700,
+        "y": 940,
         "wires": []
     }
 ]
