@@ -1125,11 +1125,11 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 1250,
-        "y": 940,
+        "x": 1150,
+        "y": 860,
         "wires": [
             [
-                "4a45499929274a07"
+                "b9f80c7fbfc50ff3"
             ]
         ]
     },
@@ -1366,6 +1366,25 @@
         "wires": [
             [
                 "79d7b79558c35a18"
+            ]
+        ]
+    },
+    {
+        "id": "b9f80c7fbfc50ff3",
+        "type": "function",
+        "z": "59a0bad7073bcd64",
+        "name": "function 3",
+        "func": "// Get the current UTC timestamp\nvar utcTimestamp = new Date().toISOString();\n\n// Get the local timezone dynamically\nvar localTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;\n\n// Convert UTC timestamp to local timezone\nvar localTimestamp = new Date(utcTimestamp);\n\n// Get the UTC offset in minutes\nvar utcOffsetMinutes = localTimestamp.getTimezoneOffset();\n\n// Adjust the timestamp by adding the UTC offset\nlocalTimestamp.setMinutes(localTimestamp.getMinutes() - utcOffsetMinutes);\n\n// Output the local timestamp\nmsg.payload = localTimestamp;\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 900,
+        "wires": [
+            [
+                "4a45499929274a07"
             ]
         ]
     }
