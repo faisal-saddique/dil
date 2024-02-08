@@ -698,7 +698,8 @@
             [
                 "0507fd99b41c1fd1",
                 "fb6ce91e8d83d26b",
-                "6fadec28fb15d12c"
+                "6fadec28fb15d12c",
+                "18077c2ed8a05f76"
             ]
         ]
     },
@@ -1387,5 +1388,21 @@
                 "4a45499929274a07"
             ]
         ]
+    },
+    {
+        "id": "18077c2ed8a05f76",
+        "type": "debug",
+        "z": "59a0bad7073bcd64",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 360,
+        "wires": []
     }
 ]
