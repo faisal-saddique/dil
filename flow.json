@@ -633,13 +633,13 @@
         "width": 6,
         "height": 1,
         "passthru": true,
-        "mode": "time",
+        "mode": "datetime-local",
         "delay": "100",
         "topic": "topic",
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 400,
+        "x": 430,
         "y": 720,
         "wires": [
             []
@@ -877,5 +877,30 @@
         "x": 600,
         "y": 540,
         "wires": []
+    },
+    {
+        "id": "e32c4faf8e97a168",
+        "type": "change",
+        "z": "59a0bad7073bcd64",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 580,
+        "wires": [
+            []
+        ]
     }
 ]
