@@ -855,8 +855,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 720,
-        "y": 700,
+        "x": 640,
+        "y": 680,
         "wires": [
             [
                 "33f1582b06655854"
@@ -875,7 +875,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 880,
+        "x": 820,
         "y": 680,
         "wires": []
     }
