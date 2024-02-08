@@ -850,7 +850,7 @@
         "height": 0,
         "passthru": true,
         "mode": "time",
-        "delay": 300,
+        "delay": "100",
         "topic": "topic",
         "sendOnBlur": true,
         "className": "",
