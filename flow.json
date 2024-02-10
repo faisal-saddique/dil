@@ -11,14 +11,11 @@
         "id": "df3445511736d041",
         "type": "group",
         "z": "59a0bad7073bcd64",
+        "name": "",
         "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
             "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
+            "color": "#ffbfbf",
+            "fill": "#ffbfbf"
         },
         "nodes": [
             "99752a5e8390a17d",
@@ -37,14 +34,10 @@
         "id": "0f12f13362f1e6a8",
         "type": "group",
         "z": "59a0bad7073bcd64",
+        "name": "",
         "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
-            "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
+            "fill": "#e3f3d3",
+            "label": true
         },
         "nodes": [
             "078f291cd7c79276",
@@ -67,14 +60,10 @@
         "id": "18041edb02559106",
         "type": "group",
         "z": "59a0bad7073bcd64",
+        "name": "",
         "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
-            "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
+            "fill": "#bfdbef",
+            "label": true
         },
         "nodes": [
             "4a45499929274a07",
@@ -92,14 +81,10 @@
         "id": "92ffe54822e9b2be",
         "type": "group",
         "z": "59a0bad7073bcd64",
+        "name": "",
         "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
-            "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
+            "fill": "#ffffbf",
+            "label": true
         },
         "nodes": [
             "eedebb0c7203774e",
@@ -142,14 +127,10 @@
         "id": "146f6d5585c1445b",
         "type": "group",
         "z": "59a0bad7073bcd64",
+        "name": "",
         "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
-            "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
+            "fill": "#dbcbe7",
+            "label": true
         },
         "nodes": [
             "8c4cd01ae7d72e7e",
