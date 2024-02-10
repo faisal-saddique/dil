@@ -8,6 +8,32 @@
         "env": []
     },
     {
+        "id": "df3445511736d041",
+        "type": "group",
+        "z": "59a0bad7073bcd64",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "99752a5e8390a17d",
+            "e5a333081d7ee0bf",
+            "14ac5712b2a88231",
+            "17573b9cf5a85577",
+            "168cd5bbfdbe0223",
+            "924d72bc2c4d5378"
+        ],
+        "x": 674,
+        "y": 39,
+        "w": 632,
+        "h": 122
+    },
+    {
         "id": "0385c4a0f3d45ee3",
         "type": "ui_base",
         "theme": {
@@ -275,7 +301,7 @@
         "animate": false,
         "className": "",
         "x": 1150,
-        "y": 460,
+        "y": 420,
         "wires": [
             [
                 "cfb160fe261c9ee1",
@@ -561,6 +587,7 @@
         "id": "99752a5e8390a17d",
         "type": "ui_numeric",
         "z": "59a0bad7073bcd64",
+        "g": "df3445511736d041",
         "name": "",
         "label": "Warning Level",
         "tooltip": "",
@@ -577,8 +604,8 @@
         "max": "999",
         "step": 1,
         "className": " ",
-        "x": 1140,
-        "y": 300,
+        "x": 940,
+        "y": 80,
         "wires": [
             [
                 "14ac5712b2a88231"
@@ -589,6 +616,7 @@
         "id": "e5a333081d7ee0bf",
         "type": "ui_numeric",
         "z": "59a0bad7073bcd64",
+        "g": "df3445511736d041",
         "name": "",
         "label": "Cutoff Level",
         "tooltip": "",
@@ -605,8 +633,8 @@
         "max": "999",
         "step": 1,
         "className": "",
-        "x": 1130,
-        "y": 340,
+        "x": 930,
+        "y": 120,
         "wires": [
             [
                 "17573b9cf5a85577"
@@ -676,7 +704,7 @@
         "expiry": "",
         "broker": "27c07a765d141ace",
         "x": 1370,
-        "y": 440,
+        "y": 420,
         "wires": []
     },
     {
@@ -719,7 +747,7 @@
         "topic": "",
         "name": "",
         "x": 1170,
-        "y": 420,
+        "y": 380,
         "wires": [
             []
         ]
@@ -736,7 +764,7 @@
         "finalize": "",
         "libs": [],
         "x": 1370,
-        "y": 500,
+        "y": 460,
         "wires": []
     },
     {
@@ -751,7 +779,7 @@
         "finalize": "",
         "libs": [],
         "x": 880,
-        "y": 420,
+        "y": 400,
         "wires": [
             [
                 "377fcc23db7c3cd3"
@@ -765,6 +793,7 @@
         "id": "14ac5712b2a88231",
         "type": "change",
         "z": "59a0bad7073bcd64",
+        "g": "df3445511736d041",
         "name": "",
         "rules": [
             {
@@ -780,8 +809,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1370,
-        "y": 300,
+        "x": 1170,
+        "y": 80,
         "wires": [
             []
         ]
@@ -790,6 +819,7 @@
         "id": "17573b9cf5a85577",
         "type": "change",
         "z": "59a0bad7073bcd64",
+        "g": "df3445511736d041",
         "name": "",
         "rules": [
             {
@@ -805,8 +835,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1360,
-        "y": 340,
+        "x": 1160,
+        "y": 120,
         "wires": [
             []
         ]
@@ -1088,7 +1118,7 @@
         "type": "function",
         "z": "59a0bad7073bcd64",
         "name": "Scheduling Brain",
-        "func": "// Get current timestamp\nvar currentTime = msg.payload;\n\n// Function to convert timestamp to human-readable date and time\nfunction timestampToDateTime(timestamp) {\n    var date = new Date(timestamp);\n    return date.toLocaleString();\n}\n\n// Function to add days to a timestamp\nfunction addDays(timestamp, days) {\n    return timestamp + days * 24 * 60 * 60 * 1000; // Convert days to milliseconds\n}\n\n// Check if Schedule Switch On event has already been triggered\nvar scheduleOnEventTriggered = global.get(\"scheduleOnEventTriggered\") || false;\n\n// Schedule Switch On\nif (global.get(\"scheduleOnFlag\") && !scheduleOnEventTriggered) {\n    var scheduleOnTime = global.get(\"scheduleOnTimeInput\");\n    var scheduleOnDate = global.get(\"scheduleOnDateInput\");\n\n    // Check if the scheduled switch-on time and date have arrived\n    if (currentTime >= scheduleOnDate && currentTime >= scheduleOnTime) {\n        node.warn(\"Scheduled Switch On time reached: \" + timestampToDateTime(currentTime));\n        msg.payload = 1; // Output 1 to indicate switch-on\n        global.set(\"scheduleOnEventTriggered\", true); // Set the flag to indicate the event has been triggered\n        return msg;\n    }\n}\n\n// Check if Schedule Switch Off event has already been triggered\nvar scheduleOffEventTriggered = global.get(\"scheduleOffEventTriggered\") || false;\n\n// Schedule Switch Off\nif (global.get(\"scheduleOffFlag\") && !scheduleOffEventTriggered) {\n    var scheduleOffTime = global.get(\"scheduleOffTimeInput\");\n    var scheduleOffDate = global.get(\"scheduleOffDateInput\");\n\n    // Check if the scheduled switch-off time and date have arrived\n    if (currentTime >= scheduleOffDate && currentTime >= scheduleOffTime) {\n        node.warn(\"Scheduled Switch Off time reached: \" + timestampToDateTime(currentTime));\n        msg.payload = 0; // Output 0 to indicate switch-off\n        global.set(\"scheduleOffEventTriggered\", true); // Set the flag to indicate the event has been triggered\n        return msg;\n    }\n}\n\nvar repeatSwitchOnFlag = global.get(\"repeatSwitchOnFlag\") || false;\nvar repeatSwitchOffFlag = global.get(\"repeatSwitchOffFlag\") || false;\n\n// Repeat Feature\nif (global.get(\"repeatOnFlag\")) {\n    var repeatStartDate = global.get(\"repeatOccuringsStartDate\");\n    var repeatStartTime = global.get(\"repeatOccuringsStartTime\");\n    var repeatRunTime = global.get(\"repeatOccuringsRunTime\");\n    var repeatOccurings = global.get(\"repeatOccuringsInput\");\n\n\n    // node.warn(\"Repeat Start Date: \" + repeatStartDate);\n    // node.warn(\"Repeat Start Time: \" + repeatStartTime);\n    // node.warn(\"Current Time: \" + currentTime);\n    // node.warn(\"Repeat Run Time: \" + repeatRunTime);\n    // node.warn(\"Repeat Occurings: \" + repeatOccurings);\n    // node.warn(\"Repeat Switch On Flag: \" + repeatSwitchOnFlag);\n    // node.warn(\"Repeat Switch Off Flag: \" + repeatSwitchOffFlag);\n    \n    // Check if the repeat start date and time have arrived\n    if (currentTime >= repeatStartDate && currentTime >= repeatStartTime) {\n        // Calculate time difference in minutes\n        var timeDiffMinutes = Math.floor((currentTime - repeatStartTime) / (60 * 1000));\n\n        // node.warn(`The timeDiffMinutes is: ${timeDiffMinutes}`);\n        node.warn(`${timeDiffMinutes} > 0 && ${timeDiffMinutes} <= ${repeatRunTime} && ${repeatOccurings} > 0 && !${repeatSwitchOnFlag}`)\n        // Check if the current time is within the repeat schedule and the number of occurrences is within the limit\n        if (timeDiffMinutes >= 0 && timeDiffMinutes < repeatRunTime && repeatOccurings > 0 && !repeatSwitchOnFlag) {\n            global.set(\"repeatRunTimeGoingOnFlag\", true);\n            node.warn(\"insdie the repeat loop, condition is true\")\n            node.warn(\"Repeat On Feature: \" + timestampToDateTime(currentTime));\n            global.set(\"repeatSwitchOnFlag\", true);\n            msg.payload = 1; // Output 1 to indicate switch-on\n            return msg;\n        }\n        else if (timeDiffMinutes >= 0 && timeDiffMinutes >= repeatRunTime && repeatOccurings > 0 && !repeatSwitchOffFlag) {\n            node.warn(\"Repeat Off Feature: \" + timestampToDateTime(currentTime));\n            global.set(\"repeatRunTimeGoingOnFlag\", false);\n            global.set(\"aDayaddedToTheRepeatOccuringsStartDate\", false);\n            global.set(\"repeatSwitchOffFlag\",true);\n            msg.payload = 0;\n            return msg; // Output 0 to indicate switch-off\n        }\n\n        if (!global.get(\"repeatRunTimeGoingOnFlag\") && !(global.get(\"aDayaddedToTheRepeatOccuringsStartDate\") || false)) {\n            // Check if the number of occurrences is within the limit\n            if (repeatOccurings <= 0) {\n                // No more occurrences, reset repeatOccuringsStartDate to end the schedule\n                global.set(\"repeatOccuringsStartDate\", 0);\n                return null;\n            } else {\n                // Calculate the timestamp for the next occurrence by adding the repeatRunTime to the repeatStartDate\n                var nextOccurrenceTimestamp = addDays(repeatStartDate, 1);\n\n                // Update repeatOccuringsStartDate for the next occurrence\n                global.set(\"repeatOccuringsStartDate\", nextOccurrenceTimestamp);\n\n                // Decrement the remaining occurrences\n                global.set(\"repeatOccuringsInput\", repeatOccurings - 1);\n                global.set(\"aDayaddedToTheRepeatOccuringsStartDate\", true);\n                // Log the next occurrence\n                node.warn(\"Next Repeat Feature Occurrence: \" + timestampToDateTime(nextOccurrenceTimestamp));\n            }\n        }\n    }\n}\n\n// No scheduled event reached\nreturn null;",
+        "func": "// Get current timestamp\nvar currentTime = msg.payload;\n\n// Function to convert timestamp to human-readable date and time\nfunction timestampToDateTime(timestamp) {\n    var date = new Date(timestamp);\n    return date.toLocaleString();\n}\n\n// Function to add days to a timestamp\nfunction addDays(timestamp, days) {\n    return timestamp + days * 24 * 60 * 60 * 1000; // Convert days to milliseconds\n}\n\n// Check if Schedule Switch On event has already been triggered\nvar scheduleOnEventTriggered = global.get(\"scheduleOnEventTriggered\") || false;\n\n// Schedule Switch On\nif (global.get(\"scheduleOnFlag\") && !scheduleOnEventTriggered) {\n    var scheduleOnTime = global.get(\"scheduleOnTimeInput\");\n    var scheduleOnDate = global.get(\"scheduleOnDateInput\");\n\n    // Check if the scheduled switch-on time and date have arrived\n    if (currentTime >= scheduleOnDate && currentTime >= scheduleOnTime) {\n        node.warn(\"Scheduled Switch On time reached: \" + timestampToDateTime(currentTime));\n        msg.payload = 1; // Output 1 to indicate switch-on\n        global.set(\"scheduleOnEventTriggered\", true); // Set the flag to indicate the event has been triggered\n        return msg;\n    }\n}\n\n// Check if Schedule Switch Off event has already been triggered\nvar scheduleOffEventTriggered = global.get(\"scheduleOffEventTriggered\") || false;\n\n// Schedule Switch Off\nif (global.get(\"scheduleOffFlag\") && !scheduleOffEventTriggered) {\n    var scheduleOffTime = global.get(\"scheduleOffTimeInput\");\n    var scheduleOffDate = global.get(\"scheduleOffDateInput\");\n\n    // Check if the scheduled switch-off time and date have arrived\n    if (currentTime >= scheduleOffDate && currentTime >= scheduleOffTime) {\n        node.warn(\"Scheduled Switch Off time reached: \" + timestampToDateTime(currentTime));\n        msg.payload = 0; // Output 0 to indicate switch-off\n        global.set(\"scheduleOffEventTriggered\", true); // Set the flag to indicate the event has been triggered\n        return msg;\n    }\n}\n\nvar repeatSwitchOnFlag = global.get(\"repeatSwitchOnFlag\");\nvar repeatSwitchOffFlag = global.get(\"repeatSwitchOffFlag\");\n\n// Repeat Feature\nif (global.get(\"repeatOnFlag\")) {\n    var repeatStartDate = global.get(\"repeatOccuringsStartDate\");\n    var repeatStartTime = global.get(\"repeatOccuringsStartTime\");\n    var repeatRunTime = global.get(\"repeatOccuringsRunTime\");\n    var repeatOccurings = global.get(\"repeatOccuringsInput\");\n\n    // Check if the repeat start date and time have arrived\n    if (currentTime >= repeatStartDate && currentTime >= repeatStartTime) {\n        // Calculate time difference in minutes\n        var timeDiffMinutes = Math.floor((currentTime - repeatStartTime) / (60 * 1000));\n\n        // node.warn(`The timeDiffMinutes is: ${timeDiffMinutes}`);\n        node.warn(`${timeDiffMinutes} > 0 && ${timeDiffMinutes} <= ${repeatRunTime} && ${repeatOccurings} > 0 && !${repeatSwitchOnFlag}`)\n        // Check if the current time is within the repeat schedule and the number of occurrences is within the limit\n        if (timeDiffMinutes >= 0 && timeDiffMinutes < repeatRunTime && repeatOccurings > 0 && !repeatSwitchOnFlag) {\n            global.set(\"repeatRunTimeGoingOnFlag\", true);\n            node.warn(\"insdie the repeat loop, condition is true\")\n            node.warn(\"Repeat On Feature: \" + timestampToDateTime(currentTime));\n            global.set(\"repeatSwitchOnFlag\", true);\n            msg.payload = 1; // Output 1 to indicate switch-on\n            return msg;\n        }\n        else if (timeDiffMinutes >= 0 && timeDiffMinutes >= repeatRunTime && repeatOccurings > 0 && !repeatSwitchOffFlag) {\n            node.warn(\"Repeat Off Feature: \" + timestampToDateTime(currentTime));\n            global.set(\"repeatRunTimeGoingOnFlag\", false);\n            global.set(\"aDayaddedToTheRepeatOccuringsStartDate\", false);\n            global.set(\"repeatSwitchOffFlag\",true);\n            msg.payload = 0;\n            return msg; // Output 0 to indicate switch-off\n        }\n\n        if (!global.get(\"repeatRunTimeGoingOnFlag\") && !(global.get(\"aDayaddedToTheRepeatOccuringsStartDate\") || false)) {\n            // Check if the number of occurrences is within the limit\n            if (repeatOccurings <= 0) {\n                // No more occurrences, reset repeatOccuringsStartDate to end the schedule\n                global.set(\"repeatOccuringsStartDate\", 0);\n                return null;\n            } else {\n                // Calculate the timestamp for the next occurrence by adding the repeatRunTime to the repeatStartDate\n                var nextOccurrenceTimestamp = addDays(repeatStartDate, 1);\n\n                // Update repeatOccuringsStartDate for the next occurrence\n                global.set(\"repeatOccuringsStartDate\", nextOccurrenceTimestamp);\n\n                // Decrement the remaining occurrences\n                global.set(\"repeatOccuringsInput\", repeatOccurings - 1);\n                global.set(\"aDayaddedToTheRepeatOccuringsStartDate\", true);\n                // Log the next occurrence\n                node.warn(\"Next Repeat Feature Occurrence: \" + timestampToDateTime(nextOccurrenceTimestamp));\n            }\n        }\n    }\n}\n\n// No scheduled event reached\nreturn null;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1185,8 +1215,8 @@
         "links": [
             "b5bcc99e7a0a500f"
         ],
-        "x": 1055,
-        "y": 480,
+        "x": 1045,
+        "y": 440,
         "wires": [
             [
                 "078f291cd7c79276"
@@ -1343,6 +1373,7 @@
         "id": "168cd5bbfdbe0223",
         "type": "inject",
         "z": "59a0bad7073bcd64",
+        "g": "df3445511736d041",
         "name": "",
         "props": [
             {
@@ -1360,8 +1391,8 @@
         "topic": "",
         "payload": "200",
         "payloadType": "num",
-        "x": 970,
-        "y": 300,
+        "x": 770,
+        "y": 80,
         "wires": [
             [
                 "99752a5e8390a17d"
@@ -1372,6 +1403,7 @@
         "id": "924d72bc2c4d5378",
         "type": "inject",
         "z": "59a0bad7073bcd64",
+        "g": "df3445511736d041",
         "name": "",
         "props": [
             {
@@ -1389,11 +1421,55 @@
         "topic": "",
         "payload": "250",
         "payloadType": "num",
-        "x": 970,
-        "y": 340,
+        "x": 770,
+        "y": 120,
         "wires": [
             [
                 "e5a333081d7ee0bf"
+            ]
+        ]
+    },
+    {
+        "id": "8c4cd01ae7d72e7e",
+        "type": "function",
+        "z": "59a0bad7073bcd64",
+        "name": "Set Repeat Switch Flags",
+        "func": "global.set(\"repeatSwitchOnFlag\",false);\nglobal.set(\"repeatSwitchOffFlag\",false);",
+        "outputs": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1150,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "98d2d7ca2393f87d",
+        "type": "inject",
+        "z": "59a0bad7073bcd64",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 930,
+        "y": 200,
+        "wires": [
+            [
+                "8c4cd01ae7d72e7e"
             ]
         ]
     }
