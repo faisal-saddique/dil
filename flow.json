@@ -730,16 +730,14 @@
         "z": "59a0bad7073bcd64",
         "name": "Set Switch Status",
         "func": "if (msg.payload==1) global.set(\"switchStatus\",true);\nelse global.set(\"switchStatus\",false);",
-        "outputs": 1,
+        "outputs": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
         "x": 1370,
         "y": 500,
-        "wires": [
-            []
-        ]
+        "wires": []
     },
     {
         "id": "6fadec28fb15d12c",
