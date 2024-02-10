@@ -1566,7 +1566,7 @@
         "type": "function",
         "z": "59a0bad7073bcd64",
         "name": "Set Repeat Switch Flags",
-        "func": "global.set(\"repeatSwitchOnFlag\",false);\nglobal.set(\"repeatSwitchOffFlag\",false);\n",
+        "func": "global.set(\"repeatSwitchOnFlag\",false);\nglobal.set(\"repeatSwitchOffFlag\",false);\nglobal.set(\"repeatOccuringsInput\", 6);\n\n",
         "outputs": 0,
         "noerr": 0,
         "initialize": "",
