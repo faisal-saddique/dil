@@ -1743,12 +1743,12 @@
         ],
         "repeat": "",
         "crontab": "",
-        "once": false,
+        "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 800,
+        "payload": "6",
+        "payloadType": "num",
+        "x": 790,
         "y": 1360,
         "wires": [
             [
