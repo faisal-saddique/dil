@@ -34,6 +34,111 @@
         "h": 122
     },
     {
+        "id": "0f12f13362f1e6a8",
+        "type": "group",
+        "z": "59a0bad7073bcd64",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "078f291cd7c79276",
+            "fb6ce91e8d83d26b",
+            "0507fd99b41c1fd1",
+            "233f2b7de80e238c",
+            "f5243a9700c2a50b",
+            "377fcc23db7c3cd3",
+            "cfb160fe261c9ee1",
+            "6fadec28fb15d12c",
+            "4d0ef71d5b4ac7d6",
+            "18077c2ed8a05f76"
+        ],
+        "x": 374,
+        "y": 399,
+        "w": 1012,
+        "h": 262
+    },
+    {
+        "id": "18041edb02559106",
+        "type": "group",
+        "z": "59a0bad7073bcd64",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "4a45499929274a07",
+            "d6e2ce968039b14d",
+            "83e1d0722edfae02",
+            "b5bcc99e7a0a500f",
+            "b9f80c7fbfc50ff3"
+        ],
+        "x": 374,
+        "y": 699,
+        "w": 1032,
+        "h": 162
+    },
+    {
+        "id": "92ffe54822e9b2be",
+        "type": "group",
+        "z": "59a0bad7073bcd64",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "eedebb0c7203774e",
+            "f2b19b4200eaa235",
+            "69decd9c3a0fe0f8",
+            "7efcde0fa99aad27",
+            "eb282b9f801f4f0c",
+            "05c51c0b26b33bdc",
+            "c35925cbea4de0e1",
+            "25ac4e6648b3254d",
+            "433ee6ae49a26ad0",
+            "cefcfde6022fa753",
+            "50871911fdc8f4e7",
+            "9dd1c1159802e8d1",
+            "a9a2d0a41abdf618",
+            "4fc41d79b5a49cdd",
+            "79d7b79558c35a18",
+            "53f7637aabcda429",
+            "f9773056d9c65f14",
+            "1fed3fbb55b9172b",
+            "909e66ed049c159f",
+            "ccfd1144f40367ca",
+            "5b87f6349d223f2b",
+            "d0e98a42b017c3a2",
+            "4761fa88b71ee202",
+            "2ecdb6ea1e8b891f",
+            "087e0aa69338d49b",
+            "6b3e48528cb3af3a",
+            "9a6c4a4521b2c962",
+            "b443af28645258d1",
+            "fb37d21e92d6805b",
+            "bbb641608562f141"
+        ],
+        "x": 374,
+        "y": 899,
+        "w": 1072,
+        "h": 642
+    },
+    {
         "id": "0385c4a0f3d45ee3",
         "type": "ui_base",
         "theme": {
@@ -278,6 +383,7 @@
         "id": "078f291cd7c79276",
         "type": "ui_switch",
         "z": "59a0bad7073bcd64",
+        "g": "0f12f13362f1e6a8",
         "name": "",
         "label": "switch",
         "tooltip": "",
@@ -300,8 +406,8 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 1150,
-        "y": 420,
+        "x": 1050,
+        "y": 580,
         "wires": [
             [
                 "cfb160fe261c9ee1",
@@ -313,6 +419,7 @@
         "id": "fb6ce91e8d83d26b",
         "type": "ui_chart",
         "z": "59a0bad7073bcd64",
+        "g": "0f12f13362f1e6a8",
         "name": "",
         "group": "b8d2d09c504dbf58",
         "order": 1,
@@ -347,8 +454,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 770,
-        "y": 320,
+        "x": 670,
+        "y": 480,
         "wires": [
             []
         ]
@@ -357,6 +464,7 @@
         "id": "0507fd99b41c1fd1",
         "type": "ui_gauge",
         "z": "59a0bad7073bcd64",
+        "g": "0f12f13362f1e6a8",
         "name": "",
         "group": "b8d2d09c504dbf58",
         "order": 2,
@@ -377,14 +485,15 @@
         "seg2": "850",
         "diff": false,
         "className": "",
-        "x": 770,
-        "y": 280,
+        "x": 670,
+        "y": 440,
         "wires": []
     },
     {
         "id": "eedebb0c7203774e",
         "type": "ui_switch",
         "z": "59a0bad7073bcd64",
+        "g": "92ffe54822e9b2be",
         "name": "",
         "label": "Scheduled ON",
         "tooltip": "",
@@ -419,6 +528,7 @@
         "id": "f2b19b4200eaa235",
         "type": "ui_switch",
         "z": "59a0bad7073bcd64",
+        "g": "92ffe54822e9b2be",
         "name": "",
         "label": "Scheduled OFF",
         "tooltip": "",
@@ -453,6 +563,7 @@
         "id": "69decd9c3a0fe0f8",
         "type": "ui_date_picker",
         "z": "59a0bad7073bcd64",
+        "g": "92ffe54822e9b2be",
         "name": "",
         "label": "date",
         "group": "4529a262d878ff59",
@@ -475,6 +586,7 @@
         "id": "7efcde0fa99aad27",
         "type": "ui_switch",
         "z": "59a0bad7073bcd64",
+        "g": "92ffe54822e9b2be",
         "name": "",
         "label": "Repeat",
         "tooltip": "",
@@ -509,6 +621,7 @@
         "id": "eb282b9f801f4f0c",
         "type": "ui_numeric",
         "z": "59a0bad7073bcd64",
+        "g": "92ffe54822e9b2be",
         "name": "",
         "label": "Occurrings",
         "tooltip": "",
@@ -537,6 +650,7 @@
         "id": "05c51c0b26b33bdc",
         "type": "ui_date_picker",
         "z": "59a0bad7073bcd64",
+        "g": "92ffe54822e9b2be",
         "name": "",
         "label": "Start Date",
         "group": "7c188941542118c2",
@@ -559,6 +673,7 @@
         "id": "c35925cbea4de0e1",
         "type": "ui_numeric",
         "z": "59a0bad7073bcd64",
+        "g": "92ffe54822e9b2be",
         "name": "",
         "label": "Running Time (Minutes)",
         "tooltip": "",
@@ -645,6 +760,7 @@
         "id": "25ac4e6648b3254d",
         "type": "ui_date_picker",
         "z": "59a0bad7073bcd64",
+        "g": "92ffe54822e9b2be",
         "name": "",
         "label": "date",
         "group": "4529a262d878ff59",
@@ -667,6 +783,7 @@
         "id": "433ee6ae49a26ad0",
         "type": "ui_text_input",
         "z": "59a0bad7073bcd64",
+        "g": "92ffe54822e9b2be",
         "name": "",
         "label": "",
         "tooltip": "",
@@ -693,6 +810,7 @@
         "id": "233f2b7de80e238c",
         "type": "mqtt out",
         "z": "59a0bad7073bcd64",
+        "g": "0f12f13362f1e6a8",
         "name": "",
         "topic": "Smart_Plug-Relay",
         "qos": "",
@@ -703,14 +821,15 @@
         "correl": "",
         "expiry": "",
         "broker": "27c07a765d141ace",
-        "x": 1370,
-        "y": 420,
+        "x": 1270,
+        "y": 580,
         "wires": []
     },
     {
         "id": "f5243a9700c2a50b",
         "type": "mqtt in",
         "z": "59a0bad7073bcd64",
+        "g": "0f12f13362f1e6a8",
         "name": "",
         "topic": "Power",
         "qos": "2",
@@ -720,8 +839,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 550,
-        "y": 340,
+        "x": 450,
+        "y": 500,
         "wires": [
             [
                 "0507fd99b41c1fd1",
@@ -735,6 +854,7 @@
         "id": "377fcc23db7c3cd3",
         "type": "ui_toast",
         "z": "59a0bad7073bcd64",
+        "g": "0f12f13362f1e6a8",
         "position": "dialog",
         "displayTime": "2",
         "highlight": "",
@@ -746,8 +866,8 @@
         "className": "",
         "topic": "",
         "name": "",
-        "x": 1170,
-        "y": 380,
+        "x": 1070,
+        "y": 540,
         "wires": [
             []
         ]
@@ -756,6 +876,7 @@
         "id": "cfb160fe261c9ee1",
         "type": "function",
         "z": "59a0bad7073bcd64",
+        "g": "0f12f13362f1e6a8",
         "name": "Set Switch Status",
         "func": "if (msg.payload==1) global.set(\"switchStatus\",true);\nelse global.set(\"switchStatus\",false);",
         "outputs": 0,
@@ -763,14 +884,15 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1370,
-        "y": 460,
+        "x": 1270,
+        "y": 620,
         "wires": []
     },
     {
         "id": "6fadec28fb15d12c",
         "type": "function",
         "z": "59a0bad7073bcd64",
+        "g": "0f12f13362f1e6a8",
         "name": "Check if the Power is below the threshold",
         "func": "// Assuming the threshold is defined as a constant (you can adjust it)\nconst warningLevel = global.get(\"warningLevel\");\nconst cutOffLevel = global.get(\"cutOffLevel\");\n\n// Assuming the power value is in msg.payload\nconst powerValue = msg.payload;\n\n// Check if the power value is below the threshold\nif (powerValue < warningLevel) {\n    // Power is below the warning level, no action needed\n    return [null, null];\n} else {\n    var msg1 = { payload: null };\n    var msg2 = { payload: 0 };\n\n    // Check if power exceeds warning level\n    if (powerValue >= warningLevel && powerValue < cutOffLevel) {\n\n        // Power is above or equal to warning level, check if the warning has been sent\n        if (!(global.get(\"warningSent\") || false)) {\n            // Warning has not been sent, send the warning message and update the flag\n            msg1.payload = \"WARNING: Power is above the warning level.\";\n            global.set(\"warningSent\", true);\n            return [msg1, null];\n        } else {\n            // Warning has already been sent, send null\n            return [null, null];\n        }\n    } else if (powerValue >= cutOffLevel) {\n        // Power is above or equal to cutoff level, output a warning message and turn off the switch\n        msg1.payload = \"ALERT: Power is above the cutoff level. Switch turned OFF.\";\n        if (global.get(\"switchStatus\")) \n        {\n            global.set(\"warningSent\", false);\n            return [msg1, msg2]; \n        }\n        else return [null, null];\n    } else {\n        // Power is between warning level and cutoff level, no action needed\n        return [null, null];\n    }\n}\n",
         "outputs": 2,
@@ -778,8 +900,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 880,
-        "y": 400,
+        "x": 780,
+        "y": 560,
         "wires": [
             [
                 "377fcc23db7c3cd3"
@@ -845,6 +967,7 @@
         "id": "cefcfde6022fa753",
         "type": "ui_text_input",
         "z": "59a0bad7073bcd64",
+        "g": "92ffe54822e9b2be",
         "name": "",
         "label": "",
         "tooltip": "",
@@ -871,6 +994,7 @@
         "id": "50871911fdc8f4e7",
         "type": "ui_text_input",
         "z": "59a0bad7073bcd64",
+        "g": "92ffe54822e9b2be",
         "name": "",
         "label": "",
         "tooltip": "",
@@ -897,6 +1021,7 @@
         "id": "9dd1c1159802e8d1",
         "type": "function",
         "z": "59a0bad7073bcd64",
+        "g": "92ffe54822e9b2be",
         "name": "Set Global Variables",
         "func": "// Extract topic from msg\nvar topic = msg.topic;\n\n// Check topic and set global variable accordingly\nswitch (topic) {\n    case \"scheduleOnFlag\":\n        global.set(topic, msg.payload);\n        // Reset scheduleOnEventTriggered if scheduleOnFlag is changed\n        global.set(\"scheduleOnEventTriggered\", false);\n        node.warn(\"Set global variable for \" + topic + \": \" + msg.payload);\n        break;\n    case \"scheduleOnDateInput\":\n        global.set(topic, msg.payload);\n        node.warn(\"Set global variable for \" + topic + \": \" + msg.payload);\n        break;\n    case \"scheduleOnTimeInput\":\n        global.set(topic, msg.payload);\n        node.warn(\"Set global variable for \" + topic + \": \" + msg.payload);\n        break;\n    case \"scheduleOffFlag\":\n        global.set(topic, msg.payload);\n        // Reset scheduleOffEventTriggered if scheduleOffFlag is changed\n        global.set(\"scheduleOffEventTriggered\", false);\n        node.warn(\"Set global variable for \" + topic + \": \" + msg.payload);\n        break;\n    case \"scheduleOffDateInput\":\n        global.set(topic, msg.payload);\n        node.warn(\"Set global variable for \" + topic + \": \" + msg.payload);\n        break;\n    case \"scheduleOffTimeInput\":\n        global.set(topic, msg.payload);\n        node.warn(\"Set global variable for \" + topic + \": \" + msg.payload);\n        break;\n    case \"repeatOnFlag\":\n        global.set(topic, msg.payload);\n        node.warn(\"Set global variable for \" + topic + \": \" + msg.payload);\n        break;\n    case \"repeatOccuringsInput\":\n        global.set(topic, msg.payload);\n        node.warn(\"Set global variable for \" + topic + \": \" + msg.payload);\n        break;\n    case \"repeatOccuringsStartDate\":\n        global.set(topic, msg.payload);\n        node.warn(\"Set global variable for \" + topic + \": \" + msg.payload);\n        break;\n    case \"repeatOccuringsStartTime\":\n        global.set(topic, msg.payload);\n        node.warn(\"Set global variable for \" + topic + \": \" + msg.payload);\n        break;\n    case \"repeatOccuringsRunTime\":\n        global.set(topic, msg.payload);\n        node.warn(\"Set global variable for \" + topic + \": \" + msg.payload);\n        break;\n\n    // Handle unknown topics if needed\n    default:\n        node.warn(\"Unknown topic: \" + topic);\n        break;\n}\n\n// Return the original msg for further processing in the flow\nreturn msg;\n",
         "outputs": 1,
@@ -914,6 +1039,7 @@
         "id": "a9a2d0a41abdf618",
         "type": "inject",
         "z": "59a0bad7073bcd64",
+        "g": "92ffe54822e9b2be",
         "name": "",
         "props": [
             {
@@ -943,6 +1069,7 @@
         "id": "4fc41d79b5a49cdd",
         "type": "inject",
         "z": "59a0bad7073bcd64",
+        "g": "92ffe54822e9b2be",
         "name": "",
         "props": [
             {
@@ -972,6 +1099,7 @@
         "id": "79d7b79558c35a18",
         "type": "link out",
         "z": "59a0bad7073bcd64",
+        "g": "92ffe54822e9b2be",
         "name": "link out 1",
         "mode": "link",
         "links": [
@@ -990,6 +1118,7 @@
         "id": "53f7637aabcda429",
         "type": "link in",
         "z": "59a0bad7073bcd64",
+        "g": "92ffe54822e9b2be",
         "name": "link in 1",
         "links": [
             "79d7b79558c35a18"
@@ -1006,6 +1135,7 @@
         "id": "f9773056d9c65f14",
         "type": "link in",
         "z": "59a0bad7073bcd64",
+        "g": "92ffe54822e9b2be",
         "name": "link in 2",
         "links": [
             "79d7b79558c35a18"
@@ -1022,6 +1152,7 @@
         "id": "1fed3fbb55b9172b",
         "type": "link in",
         "z": "59a0bad7073bcd64",
+        "g": "92ffe54822e9b2be",
         "name": "link in 3",
         "links": [
             "79d7b79558c35a18"
@@ -1038,6 +1169,7 @@
         "id": "909e66ed049c159f",
         "type": "link in",
         "z": "59a0bad7073bcd64",
+        "g": "92ffe54822e9b2be",
         "name": "link in 4",
         "links": [
             "79d7b79558c35a18"
@@ -1054,6 +1186,7 @@
         "id": "ccfd1144f40367ca",
         "type": "link in",
         "z": "59a0bad7073bcd64",
+        "g": "92ffe54822e9b2be",
         "name": "link in 5",
         "links": [
             "79d7b79558c35a18"
@@ -1070,6 +1203,7 @@
         "id": "5b87f6349d223f2b",
         "type": "link in",
         "z": "59a0bad7073bcd64",
+        "g": "92ffe54822e9b2be",
         "name": "link in 6",
         "links": [
             "79d7b79558c35a18"
@@ -1086,6 +1220,7 @@
         "id": "d0e98a42b017c3a2",
         "type": "link out",
         "z": "59a0bad7073bcd64",
+        "g": "92ffe54822e9b2be",
         "name": "link out 2",
         "mode": "link",
         "links": [
@@ -1101,6 +1236,7 @@
         "id": "4761fa88b71ee202",
         "type": "link in",
         "z": "59a0bad7073bcd64",
+        "g": "92ffe54822e9b2be",
         "name": "link in 8",
         "links": [
             "d0e98a42b017c3a2"
@@ -1117,6 +1253,7 @@
         "id": "4a45499929274a07",
         "type": "function",
         "z": "59a0bad7073bcd64",
+        "g": "18041edb02559106",
         "name": "Scheduling Brain",
         "func": "// Get current timestamp\nvar currentTime = msg.payload;\n\n// Function to convert timestamp to human-readable date and time\nfunction timestampToDateTime(timestamp) {\n    var date = new Date(timestamp);\n    return date.toLocaleString();\n}\n\n// Function to add days to a timestamp\nfunction addDays(timestamp, days) {\n    return timestamp + days * 24 * 60 * 60 * 1000; // Convert days to milliseconds\n}\n\n// Check if Schedule Switch On event has already been triggered\nvar scheduleOnEventTriggered = global.get(\"scheduleOnEventTriggered\") || false;\n\n// Schedule Switch On\nif (global.get(\"scheduleOnFlag\") && !scheduleOnEventTriggered) {\n    var scheduleOnTime = global.get(\"scheduleOnTimeInput\");\n    var scheduleOnDate = global.get(\"scheduleOnDateInput\");\n\n    // Check if the scheduled switch-on time and date have arrived\n    if (currentTime >= scheduleOnDate && currentTime >= scheduleOnTime) {\n        node.warn(\"Scheduled Switch On time reached: \" + timestampToDateTime(currentTime));\n        msg.payload = 1; // Output 1 to indicate switch-on\n        global.set(\"scheduleOnEventTriggered\", true); // Set the flag to indicate the event has been triggered\n        return msg;\n    }\n}\n\n// Check if Schedule Switch Off event has already been triggered\nvar scheduleOffEventTriggered = global.get(\"scheduleOffEventTriggered\") || false;\n\n// Schedule Switch Off\nif (global.get(\"scheduleOffFlag\") && !scheduleOffEventTriggered) {\n    var scheduleOffTime = global.get(\"scheduleOffTimeInput\");\n    var scheduleOffDate = global.get(\"scheduleOffDateInput\");\n\n    // Check if the scheduled switch-off time and date have arrived\n    if (currentTime >= scheduleOffDate && currentTime >= scheduleOffTime) {\n        node.warn(\"Scheduled Switch Off time reached: \" + timestampToDateTime(currentTime));\n        msg.payload = 0; // Output 0 to indicate switch-off\n        global.set(\"scheduleOffEventTriggered\", true); // Set the flag to indicate the event has been triggered\n        return msg;\n    }\n}\n\nvar repeatSwitchOnFlag = global.get(\"repeatSwitchOnFlag\");\nvar repeatSwitchOffFlag = global.get(\"repeatSwitchOffFlag\");\n\n// Repeat Feature\nif (global.get(\"repeatOnFlag\")) {\n    var repeatStartDate = global.get(\"repeatOccuringsStartDate\");\n    var repeatStartTime = global.get(\"repeatOccuringsStartTime\");\n    var repeatRunTime = global.get(\"repeatOccuringsRunTime\");\n    var repeatOccurings = global.get(\"repeatOccuringsInput\");\n\n    // Check if the repeat start date and time have arrived\n    if (currentTime >= repeatStartDate && currentTime >= repeatStartTime) {\n        // Calculate time difference in minutes\n        var timeDiffMinutes = Math.floor((currentTime - repeatStartTime) / (60 * 1000));\n\n        // node.warn(`The timeDiffMinutes is: ${timeDiffMinutes}`);\n        node.warn(`${timeDiffMinutes} > 0 && ${timeDiffMinutes} <= ${repeatRunTime} && ${repeatOccurings} > 0 && !${repeatSwitchOnFlag}`)\n        // Check if the current time is within the repeat schedule and the number of occurrences is within the limit\n        if (timeDiffMinutes >= 0 && timeDiffMinutes < repeatRunTime && repeatOccurings > 0 && !repeatSwitchOnFlag) {\n            global.set(\"repeatRunTimeGoingOnFlag\", true);\n            node.warn(\"insdie the repeat loop, condition is true\")\n            node.warn(\"Repeat On Feature: \" + timestampToDateTime(currentTime));\n            global.set(\"repeatSwitchOnFlag\", true);\n            msg.payload = 1; // Output 1 to indicate switch-on\n            return msg;\n        }\n        else if (timeDiffMinutes >= 0 && timeDiffMinutes >= repeatRunTime && repeatOccurings > 0 && !repeatSwitchOffFlag) {\n            node.warn(\"Repeat Off Feature: \" + timestampToDateTime(currentTime));\n            global.set(\"repeatRunTimeGoingOnFlag\", false);\n            global.set(\"aDayaddedToTheRepeatOccuringsStartDate\", false);\n            global.set(\"repeatSwitchOffFlag\",true);\n            msg.payload = 0;\n            return msg; // Output 0 to indicate switch-off\n        }\n\n        if (!global.get(\"repeatRunTimeGoingOnFlag\") && !(global.get(\"aDayaddedToTheRepeatOccuringsStartDate\") || false)) {\n            // Check if the number of occurrences is within the limit\n            if (repeatOccurings <= 0) {\n                // No more occurrences, reset repeatOccuringsStartDate to end the schedule\n                global.set(\"repeatOccuringsStartDate\", 0);\n                return null;\n            } else {\n                // Calculate the timestamp for the next occurrence by adding the repeatRunTime to the repeatStartDate\n                var nextOccurrenceTimestamp = addDays(repeatStartDate, 1);\n\n                // Update repeatOccuringsStartDate for the next occurrence\n                global.set(\"repeatOccuringsStartDate\", nextOccurrenceTimestamp);\n\n                // Decrement the remaining occurrences\n                global.set(\"repeatOccuringsInput\", repeatOccurings - 1);\n                global.set(\"aDayaddedToTheRepeatOccuringsStartDate\", true);\n                // Log the next occurrence\n                node.warn(\"Next Repeat Feature Occurrence: \" + timestampToDateTime(nextOccurrenceTimestamp));\n            }\n        }\n    }\n}\n\n// No scheduled event reached\nreturn null;",
         "outputs": 1,
@@ -1124,8 +1261,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1270,
-        "y": 740,
+        "x": 1110,
+        "y": 780,
         "wires": [
             [
                 "83e1d0722edfae02",
@@ -1137,6 +1274,7 @@
         "id": "d6e2ce968039b14d",
         "type": "inject",
         "z": "59a0bad7073bcd64",
+        "g": "18041edb02559106",
         "name": "Trigger the brain each second",
         "props": [
             {
@@ -1154,8 +1292,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 710,
-        "y": 740,
+        "x": 550,
+        "y": 780,
         "wires": [
             [
                 "b9f80c7fbfc50ff3"
@@ -1166,6 +1304,7 @@
         "id": "83e1d0722edfae02",
         "type": "debug",
         "z": "59a0bad7073bcd64",
+        "g": "18041edb02559106",
         "name": "debug 1",
         "active": true,
         "tosidebar": true,
@@ -1174,14 +1313,15 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1460,
-        "y": 780,
+        "x": 1300,
+        "y": 820,
         "wires": []
     },
     {
         "id": "2ecdb6ea1e8b891f",
         "type": "link in",
         "z": "59a0bad7073bcd64",
+        "g": "92ffe54822e9b2be",
         "name": "link in 9",
         "links": [
             "d0e98a42b017c3a2"
@@ -1198,25 +1338,27 @@
         "id": "b5bcc99e7a0a500f",
         "type": "link out",
         "z": "59a0bad7073bcd64",
+        "g": "18041edb02559106",
         "name": "link out 3",
         "mode": "link",
         "links": [
             "4d0ef71d5b4ac7d6"
         ],
-        "x": 1415,
-        "y": 700,
+        "x": 1255,
+        "y": 740,
         "wires": []
     },
     {
         "id": "4d0ef71d5b4ac7d6",
         "type": "link in",
         "z": "59a0bad7073bcd64",
+        "g": "0f12f13362f1e6a8",
         "name": "link in 10",
         "links": [
             "b5bcc99e7a0a500f"
         ],
-        "x": 1045,
-        "y": 440,
+        "x": 945,
+        "y": 600,
         "wires": [
             [
                 "078f291cd7c79276"
@@ -1227,6 +1369,7 @@
         "id": "087e0aa69338d49b",
         "type": "inject",
         "z": "59a0bad7073bcd64",
+        "g": "92ffe54822e9b2be",
         "name": "",
         "props": [
             {
@@ -1256,6 +1399,7 @@
         "id": "6b3e48528cb3af3a",
         "type": "link out",
         "z": "59a0bad7073bcd64",
+        "g": "92ffe54822e9b2be",
         "name": "link out 4",
         "mode": "link",
         "links": [
@@ -1271,6 +1415,7 @@
         "id": "9a6c4a4521b2c962",
         "type": "link in",
         "z": "59a0bad7073bcd64",
+        "g": "92ffe54822e9b2be",
         "name": "link in 11",
         "links": [
             "6b3e48528cb3af3a"
@@ -1287,6 +1432,7 @@
         "id": "b443af28645258d1",
         "type": "link in",
         "z": "59a0bad7073bcd64",
+        "g": "92ffe54822e9b2be",
         "name": "link in 12",
         "links": [
             "6b3e48528cb3af3a"
@@ -1303,6 +1449,7 @@
         "id": "fb37d21e92d6805b",
         "type": "link in",
         "z": "59a0bad7073bcd64",
+        "g": "92ffe54822e9b2be",
         "name": "link in 13",
         "links": [
             "6b3e48528cb3af3a"
@@ -1319,6 +1466,7 @@
         "id": "bbb641608562f141",
         "type": "function",
         "z": "59a0bad7073bcd64",
+        "g": "92ffe54822e9b2be",
         "name": "Add Local Timezone offset ",
         "func": "// Get the current UTC timestamp\nvar utcTimestamp = new Date().toISOString();\n\n// Get the local timezone dynamically\nvar localTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;\n\n// Convert UTC timestamp to local timezone\nvar localTimestamp = new Date(utcTimestamp);\n\n// Get the UTC offset in minutes\nvar utcOffsetMinutes = localTimestamp.getTimezoneOffset();\n\n// Adjust the timestamp by adding the UTC offset\nlocalTimestamp.setMinutes(localTimestamp.getMinutes() - utcOffsetMinutes);\n\n// Output the local timestamp\nmsg.payload = localTimestamp;\n\nreturn msg;\n",
         "outputs": 1,
@@ -1338,6 +1486,7 @@
         "id": "b9f80c7fbfc50ff3",
         "type": "function",
         "z": "59a0bad7073bcd64",
+        "g": "18041edb02559106",
         "name": "Add Local Timezone offset ",
         "func": "// Get the current UTC timestamp\nvar utcTimestamp = new Date().toISOString();\n\n// Get the local timezone dynamically\nvar localTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;\n\n// Convert UTC timestamp to local timezone\nvar localTimestamp = new Date(utcTimestamp);\n\n// Get the UTC offset in minutes\nvar utcOffsetMinutes = localTimestamp.getTimezoneOffset();\n\n// Adjust the timestamp by adding the UTC offset\nlocalTimestamp.setMinutes(localTimestamp.getMinutes() - utcOffsetMinutes);\n\n// Output the local timestamp\nmsg.payload = localTimestamp;\n\nreturn msg;\n",
         "outputs": 1,
@@ -1345,8 +1494,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1020,
-        "y": 740,
+        "x": 860,
+        "y": 780,
         "wires": [
             [
                 "4a45499929274a07"
@@ -1357,6 +1506,7 @@
         "id": "18077c2ed8a05f76",
         "type": "debug",
         "z": "59a0bad7073bcd64",
+        "g": "0f12f13362f1e6a8",
         "name": "debug 3",
         "active": false,
         "tosidebar": true,
@@ -1365,8 +1515,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 780,
-        "y": 360,
+        "x": 680,
+        "y": 520,
         "wires": []
     },
     {
@@ -1434,7 +1584,7 @@
         "type": "function",
         "z": "59a0bad7073bcd64",
         "name": "Set Repeat Switch Flags",
-        "func": "global.set(\"repeatSwitchOnFlag\",false);\nglobal.set(\"repeatSwitchOffFlag\",false);",
+        "func": "global.set(\"repeatSwitchOnFlag\",false);\nglobal.set(\"repeatSwitchOffFlag\",false);\n",
         "outputs": 0,
         "noerr": 0,
         "initialize": "",
