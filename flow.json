@@ -28,8 +28,8 @@
             "168cd5bbfdbe0223",
             "924d72bc2c4d5378"
         ],
-        "x": 674,
-        "y": 39,
+        "x": 374,
+        "y": 119,
         "w": 632,
         "h": 122
     },
@@ -137,6 +137,28 @@
         "y": 899,
         "w": 1072,
         "h": 642
+    },
+    {
+        "id": "146f6d5585c1445b",
+        "type": "group",
+        "z": "59a0bad7073bcd64",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "8c4cd01ae7d72e7e",
+            "98d2d7ca2393f87d"
+        ],
+        "x": 374,
+        "y": 279,
+        "w": 472,
+        "h": 82
     },
     {
         "id": "0385c4a0f3d45ee3",
@@ -719,8 +741,8 @@
         "max": "999",
         "step": 1,
         "className": " ",
-        "x": 940,
-        "y": 80,
+        "x": 640,
+        "y": 160,
         "wires": [
             [
                 "14ac5712b2a88231"
@@ -748,8 +770,8 @@
         "max": "999",
         "step": 1,
         "className": "",
-        "x": 930,
-        "y": 120,
+        "x": 630,
+        "y": 200,
         "wires": [
             [
                 "17573b9cf5a85577"
@@ -931,8 +953,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1170,
-        "y": 80,
+        "x": 870,
+        "y": 160,
         "wires": [
             []
         ]
@@ -957,8 +979,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1160,
-        "y": 120,
+        "x": 860,
+        "y": 200,
         "wires": [
             []
         ]
@@ -1523,8 +1545,8 @@
         "topic": "",
         "payload": "200",
         "payloadType": "num",
-        "x": 770,
-        "y": 80,
+        "x": 470,
+        "y": 160,
         "wires": [
             [
                 "99752a5e8390a17d"
@@ -1553,8 +1575,8 @@
         "topic": "",
         "payload": "250",
         "payloadType": "num",
-        "x": 770,
-        "y": 120,
+        "x": 470,
+        "y": 200,
         "wires": [
             [
                 "e5a333081d7ee0bf"
@@ -1565,6 +1587,7 @@
         "id": "8c4cd01ae7d72e7e",
         "type": "function",
         "z": "59a0bad7073bcd64",
+        "g": "146f6d5585c1445b",
         "name": "Set Repeat Switch Flags",
         "func": "global.set(\"repeatSwitchOnFlag\",false);\nglobal.set(\"repeatSwitchOffFlag\",false);\nglobal.set(\"repeatOccuringsInput\", 6);\n\n",
         "outputs": 0,
@@ -1572,14 +1595,15 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1150,
-        "y": 200,
+        "x": 710,
+        "y": 320,
         "wires": []
     },
     {
         "id": "98d2d7ca2393f87d",
         "type": "inject",
         "z": "59a0bad7073bcd64",
+        "g": "146f6d5585c1445b",
         "name": "",
         "props": [
             {
@@ -1597,8 +1621,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 930,
-        "y": 200,
+        "x": 490,
+        "y": 320,
         "wires": [
             [
                 "8c4cd01ae7d72e7e"
